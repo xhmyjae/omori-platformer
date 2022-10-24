@@ -69,6 +69,7 @@ namespace inTheOverworld
             this.Lamp2 = new System.Windows.Forms.PictureBox();
             this.Flower1 = new System.Windows.Forms.PictureBox();
             this.Mushroom3 = new System.Windows.Forms.PictureBox();
+            this.HitBlock23 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.HitBlock1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HitBloc2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HitBloc3)).BeginInit();
@@ -107,6 +108,7 @@ namespace inTheOverworld
             ((System.ComponentModel.ISupportInitialize)(this.Lamp2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Flower1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Mushroom3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HitBlock23)).BeginInit();
             this.SuspendLayout();
             // 
             // HitBlock1
@@ -486,7 +488,7 @@ namespace inTheOverworld
             // 
             this.Lamp1.BackColor = System.Drawing.Color.Transparent;
             this.Lamp1.Image = global::inTheOverworld.Properties.Resources.blocLamp;
-            this.Lamp1.Location = new System.Drawing.Point(784, 78);
+            this.Lamp1.Location = new System.Drawing.Point(795, 78);
             this.Lamp1.Name = "Lamp1";
             this.Lamp1.Size = new System.Drawing.Size(30, 96);
             this.Lamp1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -542,11 +544,24 @@ namespace inTheOverworld
             this.Mushroom3.TabStop = false;
             this.Mushroom3.Tag = "backBlock";
             // 
+            // HitBlock23
+            // 
+            this.HitBlock23.BackColor = System.Drawing.Color.Transparent;
+            this.HitBlock23.Image = global::inTheOverworld.Properties.Resources.blocSolo2;
+            this.HitBlock23.Location = new System.Drawing.Point(753, 238);
+            this.HitBlock23.Name = "HitBlock23";
+            this.HitBlock23.Size = new System.Drawing.Size(54, 54);
+            this.HitBlock23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.HitBlock23.TabIndex = 47;
+            this.HitBlock23.TabStop = false;
+            this.HitBlock23.Tag = "hitBlock";
+            // 
             // InGame
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::inTheOverworld.Properties.Resources.Space_parallax;
             this.ClientSize = new System.Drawing.Size(910, 581);
+            this.Controls.Add(this.HitBlock23);
             this.Controls.Add(this.Mushroom3);
             this.Controls.Add(this.Flower1);
             this.Controls.Add(this.Lamp2);
@@ -628,8 +643,11 @@ namespace inTheOverworld
             ((System.ComponentModel.ISupportInitialize)(this.Lamp2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Flower1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Mushroom3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HitBlock23)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.PictureBox HitBlock23;
 
         private System.Windows.Forms.PictureBox Mushroom3;
 
