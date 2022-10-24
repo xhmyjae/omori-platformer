@@ -17,7 +17,7 @@ namespace inTheOverworld
         // Enemies related :
         private int _enemy1Speed = 2;
         private int _enemy2Speed = 2;
-        private int _enemy3Speed = 4;
+        private int _enemy3Speed = 3;
         
         // Blocks related :
         private int _movingBlock1Speed = 2;
@@ -87,19 +87,7 @@ namespace inTheOverworld
         {
             _isOnGround = false;
 
-            // Makes character move
-            if (!_isOnGround) Player1.Top += _player1Speed;
-
-            if (_isGoingLeft && Player1.Left > 0)
-            {
-                Player1.Left -= _player1Speed;
-            }
-
-            if (_isGoingRight && Player1.Right < ClientSize.Width)
-            {
-                Player1.Left += _player1Speed;
-            }
-
+            // Makes player jump
             if (_isJumping && Player1.Top > 0)
             {
                 Player1.Top -= _force;
@@ -126,10 +114,10 @@ namespace inTheOverworld
                         switch (Array.IndexOf(values, index))
                         {
                             case 0:
-                                Player1.Top = control.Top - Player1.Height;
+                                Player1.Top = control.Top +2 - Player1.Height;
                                 _force = 0;
-                                _isJumping = false;
                                 _isOnGround = true;
+                                _isJumping = false;
                                 _isOnSpecial = control == MovingBlock2;
                                 break;
                             case 1:
@@ -171,6 +159,19 @@ namespace inTheOverworld
                 }
             }
             
+            // Makes character move
+            if (!_isOnGround) Player1.Top += _player1Speed;
+
+            if (_isGoingLeft && Player1.Left > 0)
+            {
+                Player1.Left -= _player1Speed;
+            }
+
+            if (_isGoingRight && Player1.Right < ClientSize.Width)
+            {
+                Player1.Left += _player1Speed;
+            }
+
             // Makes enemies move
             Bunny1.Left += _enemy1Speed;
             if (Bunny1.Left <= HitBlock14.Left)

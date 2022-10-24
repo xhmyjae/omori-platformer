@@ -91,6 +91,7 @@ namespace inTheOverworld
             this.HitBlock25 = new System.Windows.Forms.PictureBox();
             this.HitBlock26 = new System.Windows.Forms.PictureBox();
             this.gameTimer = new System.Timers.Timer();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.HitBlock1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HitBloc2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HitBloc3)).BeginInit();
@@ -746,7 +747,7 @@ namespace inTheOverworld
             // 
             this.Crawler1.BackColor = System.Drawing.Color.Transparent;
             this.Crawler1.Image = global::inTheOverworld.Properties.Resources.crawler;
-            this.Crawler1.Location = new System.Drawing.Point(648, 0);
+            this.Crawler1.Location = new System.Drawing.Point(648, -163);
             this.Crawler1.Name = "Crawler1";
             this.Crawler1.Size = new System.Drawing.Size(40, 164);
             this.Crawler1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -842,11 +843,19 @@ namespace inTheOverworld
             this.gameTimer.SynchronizingObject = this;
             this.gameTimer.Elapsed += new System.Timers.ElapsedEventHandler(this.gameTimer_Elapsed);
             // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(569, 117);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(196, 45);
+            this.label1.TabIndex = 69;
+            // 
             // InGame
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::inTheOverworld.Properties.Resources.Space_parallax;
             this.ClientSize = new System.Drawing.Size(910, 581);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.HitBlock26);
             this.Controls.Add(this.HitBlock25);
             this.Controls.Add(this.HitBlock24);
@@ -979,6 +988,8 @@ namespace inTheOverworld
             ((System.ComponentModel.ISupportInitialize)(this.gameTimer)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Label label1;
 
         private System.Timers.Timer gameTimer;
 
