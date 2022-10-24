@@ -45,14 +45,17 @@ namespace inTheOverworld
             switch (e.KeyCode)
             {
                 case Keys.D :
+                case Keys.Right :
                     _isGoingRight = true;
                     Player1.Image = Properties.Resources.omoriGoingRight;
                     break;
                 case Keys.A :
+                case Keys.Left :
                     _isGoingLeft = true;
                     Player1.Image = Properties.Resources.omoriGoingLeft;
                     break;
                 case Keys.Space :
+                case Keys.Up :
                     if (!_isJumping && _isOnGround)
                     {
                         _isJumping = true;
@@ -68,10 +71,12 @@ namespace inTheOverworld
             switch (e.KeyCode)
             {
                 case Keys.D :
+                case Keys.Right :
                     _isGoingRight = false;
                     Player1.Image = Properties.Resources.omoriRight3;
                     break;
                 case Keys.A :
+                case Keys.Left :
                     _isGoingLeft = false;
                     Player1.Image = Properties.Resources.omoriLeft3;
                     break;
@@ -83,7 +88,7 @@ namespace inTheOverworld
             _isOnGround = false;
 
             // Makes character move
-            Player1.Top += _player1Speed;
+            if (!_isOnGround) Player1.Top += _player1Speed;
 
             if (_isGoingLeft && Player1.Left > 0)
             {
@@ -166,6 +171,7 @@ namespace inTheOverworld
                 }
             }
             
+            // Makes enemies move
             Bunny1.Left += _enemy1Speed;
             if (Bunny1.Left <= HitBlock14.Left)
             {
