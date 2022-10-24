@@ -902,6 +902,10 @@ namespace inTheOverworld
             this.MinimumSize = new System.Drawing.Size(916, 616);
             this.Name = "InGame";
             this.Text = "A day in the overworld...";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InGame_FormClosing);
+            this.Load += new System.EventHandler(this.InGame_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.InGame_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.InGame_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.HitBlock1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HitBloc2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HitBloc3)).EndInit();
