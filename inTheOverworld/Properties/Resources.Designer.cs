@@ -212,6 +212,26 @@ namespace inTheOverworld.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bunnyLeft {
+            get {
+                object obj = ResourceManager.GetObject("bunnyLeft", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bunnyRight {
+            get {
+                object obj = ResourceManager.GetObject("bunnyRight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap crawler {
             get {
                 object obj = ResourceManager.GetObject("crawler", resourceCulture);
@@ -305,6 +325,26 @@ namespace inTheOverworld.Properties {
         internal static System.Drawing.Bitmap omoriGoingRight {
             get {
                 object obj = ResourceManager.GetObject("omoriGoingRight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap omoriLeft3 {
+            get {
+                object obj = ResourceManager.GetObject("omoriLeft3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap omoriRight3 {
+            get {
+                object obj = ResourceManager.GetObject("omoriRight3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

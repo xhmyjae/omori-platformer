@@ -80,6 +80,10 @@ namespace inTheOverworld
             this.Hector7 = new System.Windows.Forms.PictureBox();
             this.Hector8 = new System.Windows.Forms.PictureBox();
             this.Hector9 = new System.Windows.Forms.PictureBox();
+            this.Bunny1 = new System.Windows.Forms.PictureBox();
+            this.Bunny2 = new System.Windows.Forms.PictureBox();
+            this.Crawler1 = new System.Windows.Forms.PictureBox();
+            this.Player1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.HitBlock1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HitBloc2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HitBloc3)).BeginInit();
@@ -129,6 +133,10 @@ namespace inTheOverworld
             ((System.ComponentModel.ISupportInitialize)(this.Hector7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Hector8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Hector9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Bunny1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Bunny2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Crawler1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Player1)).BeginInit();
             this.SuspendLayout();
             // 
             // HitBlock1
@@ -696,11 +704,63 @@ namespace inTheOverworld
             this.Hector9.TabStop = false;
             this.Hector9.Tag = "hectorItem";
             // 
+            // Bunny1
+            // 
+            this.Bunny1.BackColor = System.Drawing.Color.Transparent;
+            this.Bunny1.Image = global::inTheOverworld.Properties.Resources.bunnyLeft;
+            this.Bunny1.Location = new System.Drawing.Point(554, 225);
+            this.Bunny1.Name = "Bunny1";
+            this.Bunny1.Size = new System.Drawing.Size(40, 40);
+            this.Bunny1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Bunny1.TabIndex = 59;
+            this.Bunny1.TabStop = false;
+            this.Bunny1.Tag = "enemies";
+            // 
+            // Bunny2
+            // 
+            this.Bunny2.BackColor = System.Drawing.Color.Transparent;
+            this.Bunny2.Image = global::inTheOverworld.Properties.Resources.bunnyLeft;
+            this.Bunny2.Location = new System.Drawing.Point(508, 420);
+            this.Bunny2.Name = "Bunny2";
+            this.Bunny2.Size = new System.Drawing.Size(40, 40);
+            this.Bunny2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Bunny2.TabIndex = 60;
+            this.Bunny2.TabStop = false;
+            this.Bunny2.Tag = "enemies";
+            // 
+            // Crawler1
+            // 
+            this.Crawler1.BackColor = System.Drawing.Color.Transparent;
+            this.Crawler1.Image = global::inTheOverworld.Properties.Resources.crawler;
+            this.Crawler1.Location = new System.Drawing.Point(648, 0);
+            this.Crawler1.Name = "Crawler1";
+            this.Crawler1.Size = new System.Drawing.Size(40, 164);
+            this.Crawler1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Crawler1.TabIndex = 61;
+            this.Crawler1.TabStop = false;
+            this.Crawler1.Tag = "enemies";
+            // 
+            // Player1
+            // 
+            this.Player1.BackColor = System.Drawing.Color.Transparent;
+            this.Player1.Image = global::inTheOverworld.Properties.Resources.omoriRight3;
+            this.Player1.Location = new System.Drawing.Point(12, 338);
+            this.Player1.Name = "Player1";
+            this.Player1.Size = new System.Drawing.Size(50, 50);
+            this.Player1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Player1.TabIndex = 62;
+            this.Player1.TabStop = false;
+            this.Player1.Tag = "player";
+            // 
             // InGame
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::inTheOverworld.Properties.Resources.Space_parallax;
             this.ClientSize = new System.Drawing.Size(910, 581);
+            this.Controls.Add(this.Player1);
+            this.Controls.Add(this.Crawler1);
+            this.Controls.Add(this.Bunny2);
+            this.Controls.Add(this.Bunny1);
             this.Controls.Add(this.Hector9);
             this.Controls.Add(this.Hector8);
             this.Controls.Add(this.Hector7);
@@ -804,8 +864,18 @@ namespace inTheOverworld
             ((System.ComponentModel.ISupportInitialize)(this.Hector7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Hector8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Hector9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Bunny1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Bunny2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Crawler1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Player1)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.PictureBox Player1;
+
+        private System.Windows.Forms.PictureBox Crawler1;
+
+        private System.Windows.Forms.PictureBox Bunny2;
 
         private System.Windows.Forms.PictureBox Hector9;
 

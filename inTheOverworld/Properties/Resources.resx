@@ -137,4 +137,16 @@
   <data name="jamRotation" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\jamRotation.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="bunnyLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bunnyLeft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bunnyRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bunnyRight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="omoriLeft3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\omoriLeft3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="omoriRight3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\omoriRight3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
