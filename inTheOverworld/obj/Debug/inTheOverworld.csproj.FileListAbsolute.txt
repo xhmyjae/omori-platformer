@@ -9,3 +9,14 @@ D:\Users\jaech\Desktop\s t u d i e s\YNOV\L2\CSharp\inTheOverworld\inTheOverworl
 D:\Users\jaech\Desktop\s t u d i e s\YNOV\L2\CSharp\inTheOverworld\inTheOverworld\obj\Debug\inTheOverworld.pdb
 D:\Users\jaech\Desktop\s t u d i e s\YNOV\L2\CSharp\inTheOverworld\inTheOverworld\obj\Debug\inTheOverworld.Form1.resources
 D:\Users\jaech\Desktop\s t u d i e s\YNOV\L2\CSharp\inTheOverworld\inTheOverworld\obj\Debug\inTheOverworld.InGame.resources
+C:\Users\jaech\OneDrive\Documents\cours\csharp\omori-platformer\inTheOverworld\bin\Debug\inTheOverworld.exe.config
+C:\Users\jaech\OneDrive\Documents\cours\csharp\omori-platformer\inTheOverworld\bin\Debug\inTheOverworld.exe
+C:\Users\jaech\OneDrive\Documents\cours\csharp\omori-platformer\inTheOverworld\bin\Debug\inTheOverworld.pdb
+C:\Users\jaech\OneDrive\Documents\cours\csharp\omori-platformer\inTheOverworld\obj\Debug\inTheOverworld.csproj.AssemblyReference.cache
+C:\Users\jaech\OneDrive\Documents\cours\csharp\omori-platformer\inTheOverworld\obj\Debug\inTheOverworld.Form1.resources
+C:\Users\jaech\OneDrive\Documents\cours\csharp\omori-platformer\inTheOverworld\obj\Debug\inTheOverworld.InGame.resources
+C:\Users\jaech\OneDrive\Documents\cours\csharp\omori-platformer\inTheOverworld\obj\Debug\inTheOverworld.Properties.Resources.resources
+C:\Users\jaech\OneDrive\Documents\cours\csharp\omori-platformer\inTheOverworld\obj\Debug\inTheOverworld.csproj.GenerateResource.cache
+C:\Users\jaech\OneDrive\Documents\cours\csharp\omori-platformer\inTheOverworld\obj\Debug\inTheOverworld.csproj.CoreCompileInputs.cache
+C:\Users\jaech\OneDrive\Documents\cours\csharp\omori-platformer\inTheOverworld\obj\Debug\inTheOverworld.exe
+C:\Users\jaech\OneDrive\Documents\cours\csharp\omori-platformer\inTheOverworld\obj\Debug\inTheOverworld.pdb

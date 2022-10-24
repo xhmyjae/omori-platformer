@@ -86,9 +86,9 @@ namespace inTheOverworld
         private void gameTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
             _isOnGround = false;
-
+            
             // Makes player jump
-            if (_isJumping && Player1.Top > 0)
+            if (_isJumping)
             {
                 Player1.Top -= _force;
                 _force--;
@@ -111,10 +111,11 @@ namespace inTheOverworld
 
                         int index = values.Min();
 
+                        // Collisions
                         switch (Array.IndexOf(values, index))
                         {
                             case 0:
-                                Player1.Top = control.Top +2 - Player1.Height;
+                                Player1.Top = control.Top + 2 - Player1.Height;
                                 _force = 0;
                                 _isOnGround = true;
                                 _isJumping = false;
@@ -125,6 +126,7 @@ namespace inTheOverworld
                                 break;
                             case 2:
                                 Player1.Top = control.Bottom;
+                                _isJumping = false;
                                 break;
                             case 3:
                                 Player1.Left = control.Right;
@@ -205,6 +207,26 @@ namespace inTheOverworld
             if (Crawler1.Bottom >= Crawler1.Height)
             {
                 _enemy3Speed = -_enemy3Speed;
+            }
+            
+            // Makes platform move
+            MovingBlock1.Top += _movingBlock1Speed;
+            if (MovingBlock1.Top <= 140 || MovingBlock1.Bottom >= 335) _movingBlock1Speed = -_movingBlock1Speed;
+
+            MovingBlock3.Top += _movingBlock3Speed;
+            if (MovingBlock3.Top <= 280 || MovingBlock3.Bottom >= 388) _movingBlock3Speed = -_movingBlock3Speed;
+
+            if (_isOnSpecial)
+            {
+                MovingBlock2.Left += _movingBlock2Speed;
+                if (MovingBlock2.Left >= 622) _movingBlock2Speed = 0;
+            }
+            else
+            {
+                if (MovingBlock2.Left >= 433)
+                {
+                    MovingBlock2.Left -= _movingBlock2Speed;
+                }
             }
 
         }
