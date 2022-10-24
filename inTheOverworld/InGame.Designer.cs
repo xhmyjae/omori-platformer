@@ -70,6 +70,16 @@ namespace inTheOverworld
             this.Flower1 = new System.Windows.Forms.PictureBox();
             this.Mushroom3 = new System.Windows.Forms.PictureBox();
             this.HitBlock23 = new System.Windows.Forms.PictureBox();
+            this.Hector1 = new System.Windows.Forms.PictureBox();
+            this.Jam1 = new System.Windows.Forms.PictureBox();
+            this.Hector2 = new System.Windows.Forms.PictureBox();
+            this.Hector3 = new System.Windows.Forms.PictureBox();
+            this.Hector4 = new System.Windows.Forms.PictureBox();
+            this.Hector5 = new System.Windows.Forms.PictureBox();
+            this.Hector6 = new System.Windows.Forms.PictureBox();
+            this.Hector7 = new System.Windows.Forms.PictureBox();
+            this.Hector8 = new System.Windows.Forms.PictureBox();
+            this.Hector9 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.HitBlock1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HitBloc2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HitBloc3)).BeginInit();
@@ -109,6 +119,16 @@ namespace inTheOverworld
             ((System.ComponentModel.ISupportInitialize)(this.Flower1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Mushroom3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HitBlock23)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Hector1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Jam1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Hector2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Hector3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Hector4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Hector5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Hector6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Hector7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Hector8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Hector9)).BeginInit();
             this.SuspendLayout();
             // 
             // HitBlock1
@@ -524,7 +544,7 @@ namespace inTheOverworld
             // 
             this.Flower1.BackColor = System.Drawing.Color.Transparent;
             this.Flower1.Image = global::inTheOverworld.Properties.Resources.blocFlower;
-            this.Flower1.Location = new System.Drawing.Point(30, 50);
+            this.Flower1.Location = new System.Drawing.Point(80, 50);
             this.Flower1.Name = "Flower1";
             this.Flower1.Size = new System.Drawing.Size(34, 38);
             this.Flower1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -556,11 +576,141 @@ namespace inTheOverworld
             this.HitBlock23.TabStop = false;
             this.HitBlock23.Tag = "hitBlock";
             // 
+            // Hector1
+            // 
+            this.Hector1.BackColor = System.Drawing.Color.Transparent;
+            this.Hector1.Image = global::inTheOverworld.Properties.Resources.hectorRotation;
+            this.Hector1.Location = new System.Drawing.Point(17, 37);
+            this.Hector1.Name = "Hector1";
+            this.Hector1.Size = new System.Drawing.Size(35, 35);
+            this.Hector1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Hector1.TabIndex = 49;
+            this.Hector1.TabStop = false;
+            this.Hector1.Tag = "hectorItem";
+            // 
+            // Jam1
+            // 
+            this.Jam1.BackColor = System.Drawing.Color.Transparent;
+            this.Jam1.Image = global::inTheOverworld.Properties.Resources.jamRotation;
+            this.Jam1.Location = new System.Drawing.Point(651, 37);
+            this.Jam1.Name = "Jam1";
+            this.Jam1.Size = new System.Drawing.Size(35, 35);
+            this.Jam1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Jam1.TabIndex = 50;
+            this.Jam1.TabStop = false;
+            this.Jam1.Tag = "jamItem";
+            // 
+            // Hector2
+            // 
+            this.Hector2.BackColor = System.Drawing.Color.Transparent;
+            this.Hector2.Image = global::inTheOverworld.Properties.Resources.hectorRotation;
+            this.Hector2.Location = new System.Drawing.Point(462, 37);
+            this.Hector2.Name = "Hector2";
+            this.Hector2.Size = new System.Drawing.Size(35, 35);
+            this.Hector2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Hector2.TabIndex = 51;
+            this.Hector2.TabStop = false;
+            this.Hector2.Tag = "itemBlock";
+            // 
+            // Hector3
+            // 
+            this.Hector3.BackColor = System.Drawing.Color.Transparent;
+            this.Hector3.Image = global::inTheOverworld.Properties.Resources.hectorRotation;
+            this.Hector3.Location = new System.Drawing.Point(314, 180);
+            this.Hector3.Name = "Hector3";
+            this.Hector3.Size = new System.Drawing.Size(35, 35);
+            this.Hector3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Hector3.TabIndex = 52;
+            this.Hector3.TabStop = false;
+            this.Hector3.Tag = "hectorItem";
+            // 
+            // Hector4
+            // 
+            this.Hector4.BackColor = System.Drawing.Color.Transparent;
+            this.Hector4.Image = global::inTheOverworld.Properties.Resources.hectorRotation;
+            this.Hector4.Location = new System.Drawing.Point(93, 332);
+            this.Hector4.Name = "Hector4";
+            this.Hector4.Size = new System.Drawing.Size(35, 35);
+            this.Hector4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Hector4.TabIndex = 53;
+            this.Hector4.TabStop = false;
+            this.Hector4.Tag = "hectorItem";
+            // 
+            // Hector5
+            // 
+            this.Hector5.BackColor = System.Drawing.Color.Transparent;
+            this.Hector5.Image = global::inTheOverworld.Properties.Resources.hectorRotation;
+            this.Hector5.Location = new System.Drawing.Point(398, 408);
+            this.Hector5.Name = "Hector5";
+            this.Hector5.Size = new System.Drawing.Size(35, 35);
+            this.Hector5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Hector5.TabIndex = 54;
+            this.Hector5.TabStop = false;
+            this.Hector5.Tag = "hectorItem";
+            // 
+            // Hector6
+            // 
+            this.Hector6.BackColor = System.Drawing.Color.Transparent;
+            this.Hector6.Image = global::inTheOverworld.Properties.Resources.hectorRotation;
+            this.Hector6.Location = new System.Drawing.Point(683, 332);
+            this.Hector6.Name = "Hector6";
+            this.Hector6.Size = new System.Drawing.Size(35, 35);
+            this.Hector6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Hector6.TabIndex = 55;
+            this.Hector6.TabStop = false;
+            this.Hector6.Tag = "hectorItem";
+            // 
+            // Hector7
+            // 
+            this.Hector7.BackColor = System.Drawing.Color.Transparent;
+            this.Hector7.Image = global::inTheOverworld.Properties.Resources.hectorRotation;
+            this.Hector7.Location = new System.Drawing.Point(863, 489);
+            this.Hector7.Name = "Hector7";
+            this.Hector7.Size = new System.Drawing.Size(35, 35);
+            this.Hector7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Hector7.TabIndex = 56;
+            this.Hector7.TabStop = false;
+            this.Hector7.Tag = "hectorItem";
+            // 
+            // Hector8
+            // 
+            this.Hector8.BackColor = System.Drawing.Color.Transparent;
+            this.Hector8.Image = global::inTheOverworld.Properties.Resources.hectorRotation;
+            this.Hector8.Location = new System.Drawing.Point(433, 214);
+            this.Hector8.Name = "Hector8";
+            this.Hector8.Size = new System.Drawing.Size(35, 35);
+            this.Hector8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Hector8.TabIndex = 57;
+            this.Hector8.TabStop = false;
+            this.Hector8.Tag = "hectorItem";
+            // 
+            // Hector9
+            // 
+            this.Hector9.BackColor = System.Drawing.Color.Transparent;
+            this.Hector9.Image = global::inTheOverworld.Properties.Resources.hectorRotation;
+            this.Hector9.Location = new System.Drawing.Point(192, 139);
+            this.Hector9.Name = "Hector9";
+            this.Hector9.Size = new System.Drawing.Size(35, 35);
+            this.Hector9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Hector9.TabIndex = 58;
+            this.Hector9.TabStop = false;
+            this.Hector9.Tag = "hectorItem";
+            // 
             // InGame
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::inTheOverworld.Properties.Resources.Space_parallax;
             this.ClientSize = new System.Drawing.Size(910, 581);
+            this.Controls.Add(this.Hector9);
+            this.Controls.Add(this.Hector8);
+            this.Controls.Add(this.Hector7);
+            this.Controls.Add(this.Hector6);
+            this.Controls.Add(this.Hector5);
+            this.Controls.Add(this.Hector4);
+            this.Controls.Add(this.Hector3);
+            this.Controls.Add(this.Hector2);
+            this.Controls.Add(this.Jam1);
+            this.Controls.Add(this.Hector1);
             this.Controls.Add(this.HitBlock23);
             this.Controls.Add(this.Mushroom3);
             this.Controls.Add(this.Flower1);
@@ -644,8 +794,38 @@ namespace inTheOverworld
             ((System.ComponentModel.ISupportInitialize)(this.Flower1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Mushroom3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HitBlock23)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Hector1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Jam1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Hector2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Hector3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Hector4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Hector5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Hector6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Hector7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Hector8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Hector9)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.PictureBox Hector9;
+
+        private System.Windows.Forms.PictureBox Hector8;
+
+        private System.Windows.Forms.PictureBox Hector7;
+
+        private System.Windows.Forms.PictureBox Hector6;
+
+        private System.Windows.Forms.PictureBox Hector5;
+
+        private System.Windows.Forms.PictureBox Hector4;
+
+        private System.Windows.Forms.PictureBox Hector3;
+
+        private System.Windows.Forms.PictureBox Jam1;
+
+        private System.Windows.Forms.PictureBox Hector2;
+
+        private System.Windows.Forms.PictureBox Hector1;
 
         private System.Windows.Forms.PictureBox HitBlock23;
 

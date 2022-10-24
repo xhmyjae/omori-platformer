@@ -212,6 +212,16 @@ namespace inTheOverworld.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap crawler {
+            get {
+                object obj = ResourceManager.GetObject("crawler", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap enemy {
             get {
                 object obj = ResourceManager.GetObject("enemy", resourceCulture);
@@ -225,6 +235,46 @@ namespace inTheOverworld.Properties {
         internal static System.Drawing.Bitmap HECTOR {
             get {
                 object obj = ResourceManager.GetObject("HECTOR", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hectorRotation {
+            get {
+                object obj = ResourceManager.GetObject("hectorRotation", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hectorSmaller {
+            get {
+                object obj = ResourceManager.GetObject("hectorSmaller", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap jam {
+            get {
+                object obj = ResourceManager.GetObject("jam", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap jamRotation {
+            get {
+                object obj = ResourceManager.GetObject("jamRotation", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

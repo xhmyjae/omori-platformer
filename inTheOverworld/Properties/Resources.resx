@@ -122,4 +122,19 @@
   <data name="blocMid2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\blocMid2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="jam" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\jam.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="crawler" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\crawler.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hectorSmaller" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hectorSmaller.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hectorRotation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hectorRotation.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="jamRotation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\jamRotation.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

@@ -103,8 +103,13 @@
       <Content Include="Resources\blocSolo.png" />
       <Content Include="Resources\blocSolo2.png" />
       <Content Include="Resources\blocTree.png" />
+      <Content Include="Resources\crawler.png" />
       <Content Include="Resources\enemy.png" />
       <Content Include="Resources\HECTOR.png" />
+      <Content Include="Resources\hectorRotation.gif" />
+      <Content Include="Resources\hectorSmaller.png" />
+      <Content Include="Resources\jam.png" />
+      <Content Include="Resources\jamRotation.gif" />
       <Content Include="Resources\omoriGoingLeft.gif" />
       <Content Include="Resources\omoriGoingRight.gif" />
       <Content Include="Resources\OMORI_logo.png" />
