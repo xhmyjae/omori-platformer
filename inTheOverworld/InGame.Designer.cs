@@ -90,6 +90,7 @@ namespace inTheOverworld
             this.HitBlock24 = new System.Windows.Forms.PictureBox();
             this.HitBlock25 = new System.Windows.Forms.PictureBox();
             this.HitBlock26 = new System.Windows.Forms.PictureBox();
+            this.gameTimer = new System.Timers.Timer();
             ((System.ComponentModel.ISupportInitialize)(this.HitBlock1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HitBloc2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HitBloc3)).BeginInit();
@@ -149,6 +150,7 @@ namespace inTheOverworld
             ((System.ComponentModel.ISupportInitialize)(this.HitBlock24)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HitBlock25)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HitBlock26)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gameTimer)).BeginInit();
             this.SuspendLayout();
             // 
             // HitBlock1
@@ -833,6 +835,13 @@ namespace inTheOverworld
             this.HitBlock26.TabStop = false;
             this.HitBlock26.Tag = "hitBlock";
             // 
+            // gameTimer
+            // 
+            this.gameTimer.Enabled = true;
+            this.gameTimer.Interval = 20D;
+            this.gameTimer.SynchronizingObject = this;
+            this.gameTimer.Elapsed += new System.Timers.ElapsedEventHandler(this.gameTimer_Elapsed);
+            // 
             // InGame
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -897,10 +906,12 @@ namespace inTheOverworld
             this.Controls.Add(this.HitBloc3);
             this.Controls.Add(this.HitBloc2);
             this.Controls.Add(this.HitBlock1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximumSize = new System.Drawing.Size(916, 616);
             this.MinimumSize = new System.Drawing.Size(916, 616);
             this.Name = "InGame";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "A day in the overworld...";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InGame_FormClosing);
             this.Load += new System.EventHandler(this.InGame_Load);
@@ -965,8 +976,11 @@ namespace inTheOverworld
             ((System.ComponentModel.ISupportInitialize)(this.HitBlock24)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HitBlock25)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HitBlock26)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gameTimer)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private System.Timers.Timer gameTimer;
 
         private System.Windows.Forms.PictureBox HitBlock26;
 
