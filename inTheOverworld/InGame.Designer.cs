@@ -84,6 +84,12 @@ namespace inTheOverworld
             this.Bunny2 = new System.Windows.Forms.PictureBox();
             this.Crawler1 = new System.Windows.Forms.PictureBox();
             this.Player1 = new System.Windows.Forms.PictureBox();
+            this.Tree4 = new System.Windows.Forms.PictureBox();
+            this.Tree5 = new System.Windows.Forms.PictureBox();
+            this.Tree6 = new System.Windows.Forms.PictureBox();
+            this.HitBlock24 = new System.Windows.Forms.PictureBox();
+            this.HitBlock25 = new System.Windows.Forms.PictureBox();
+            this.HitBlock26 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.HitBlock1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HitBloc2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HitBloc3)).BeginInit();
@@ -137,6 +143,12 @@ namespace inTheOverworld
             ((System.ComponentModel.ISupportInitialize)(this.Bunny2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Crawler1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Player1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Tree4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Tree5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Tree6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HitBlock24)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HitBlock25)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HitBlock26)).BeginInit();
             this.SuspendLayout();
             // 
             // HitBlock1
@@ -648,7 +660,7 @@ namespace inTheOverworld
             // 
             this.Hector5.BackColor = System.Drawing.Color.Transparent;
             this.Hector5.Image = global::inTheOverworld.Properties.Resources.hectorRotation;
-            this.Hector5.Location = new System.Drawing.Point(398, 408);
+            this.Hector5.Location = new System.Drawing.Point(458, 374);
             this.Hector5.Name = "Hector5";
             this.Hector5.Size = new System.Drawing.Size(35, 35);
             this.Hector5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -752,11 +764,86 @@ namespace inTheOverworld
             this.Player1.TabStop = false;
             this.Player1.Tag = "player";
             // 
+            // Tree4
+            // 
+            this.Tree4.BackColor = System.Drawing.Color.Transparent;
+            this.Tree4.Image = global::inTheOverworld.Properties.Resources.blocTree;
+            this.Tree4.Location = new System.Drawing.Point(0, 452);
+            this.Tree4.Name = "Tree4";
+            this.Tree4.Size = new System.Drawing.Size(64, 110);
+            this.Tree4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Tree4.TabIndex = 63;
+            this.Tree4.TabStop = false;
+            this.Tree4.Tag = "backBlock";
+            // 
+            // Tree5
+            // 
+            this.Tree5.BackColor = System.Drawing.Color.Transparent;
+            this.Tree5.Image = global::inTheOverworld.Properties.Resources.blocTree;
+            this.Tree5.Location = new System.Drawing.Point(58, 452);
+            this.Tree5.Name = "Tree5";
+            this.Tree5.Size = new System.Drawing.Size(64, 110);
+            this.Tree5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Tree5.TabIndex = 64;
+            this.Tree5.TabStop = false;
+            this.Tree5.Tag = "backBlock";
+            // 
+            // Tree6
+            // 
+            this.Tree6.BackColor = System.Drawing.Color.Transparent;
+            this.Tree6.Image = global::inTheOverworld.Properties.Resources.blocTree;
+            this.Tree6.Location = new System.Drawing.Point(122, 452);
+            this.Tree6.Name = "Tree6";
+            this.Tree6.Size = new System.Drawing.Size(64, 110);
+            this.Tree6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Tree6.TabIndex = 65;
+            this.Tree6.TabStop = false;
+            this.Tree6.Tag = "backBlock";
+            // 
+            // HitBlock24
+            // 
+            this.HitBlock24.BackColor = System.Drawing.Color.Transparent;
+            this.HitBlock24.Image = global::inTheOverworld.Properties.Resources.blocLeft;
+            this.HitBlock24.Location = new System.Drawing.Point(0, 562);
+            this.HitBlock24.Name = "HitBlock24";
+            this.HitBlock24.Size = new System.Drawing.Size(64, 64);
+            this.HitBlock24.TabIndex = 66;
+            this.HitBlock24.TabStop = false;
+            this.HitBlock24.Tag = "hitBlock";
+            // 
+            // HitBlock25
+            // 
+            this.HitBlock25.BackColor = System.Drawing.Color.Transparent;
+            this.HitBlock25.Image = global::inTheOverworld.Properties.Resources.blocMid2;
+            this.HitBlock25.Location = new System.Drawing.Point(64, 562);
+            this.HitBlock25.Name = "HitBlock25";
+            this.HitBlock25.Size = new System.Drawing.Size(64, 64);
+            this.HitBlock25.TabIndex = 67;
+            this.HitBlock25.TabStop = false;
+            this.HitBlock25.Tag = "hitBlock";
+            // 
+            // HitBlock26
+            // 
+            this.HitBlock26.BackColor = System.Drawing.Color.Transparent;
+            this.HitBlock26.Image = global::inTheOverworld.Properties.Resources.blocRight;
+            this.HitBlock26.Location = new System.Drawing.Point(128, 562);
+            this.HitBlock26.Name = "HitBlock26";
+            this.HitBlock26.Size = new System.Drawing.Size(64, 64);
+            this.HitBlock26.TabIndex = 68;
+            this.HitBlock26.TabStop = false;
+            this.HitBlock26.Tag = "hitBlock";
+            // 
             // InGame
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::inTheOverworld.Properties.Resources.Space_parallax;
             this.ClientSize = new System.Drawing.Size(910, 581);
+            this.Controls.Add(this.HitBlock26);
+            this.Controls.Add(this.HitBlock25);
+            this.Controls.Add(this.HitBlock24);
+            this.Controls.Add(this.Tree6);
+            this.Controls.Add(this.Tree5);
+            this.Controls.Add(this.Tree4);
             this.Controls.Add(this.Player1);
             this.Controls.Add(this.Crawler1);
             this.Controls.Add(this.Bunny2);
@@ -868,8 +955,28 @@ namespace inTheOverworld
             ((System.ComponentModel.ISupportInitialize)(this.Bunny2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Crawler1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Player1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Tree4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Tree5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Tree6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HitBlock24)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HitBlock25)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HitBlock26)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.PictureBox HitBlock26;
+
+        private System.Windows.Forms.PictureBox HitBlock25;
+
+        private System.Windows.Forms.PictureBox HitBlock24;
+
+        private System.Windows.Forms.PictureBox Tree6;
+
+        private System.Windows.Forms.PictureBox Tree5;
+
+        private System.Windows.Forms.PictureBox Tree4;
+
+        private System.Windows.Forms.PictureBox Bunny1;
 
         private System.Windows.Forms.PictureBox Player1;
 
