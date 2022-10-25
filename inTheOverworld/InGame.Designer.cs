@@ -919,7 +919,7 @@ namespace inTheOverworld
             this.MinimumSize = new System.Drawing.Size(916, 616);
             this.Name = "InGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "A day in the overworld...";
+            this.Text = "A day in the otherworld...";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InGame_FormClosing);
             this.Load += new System.EventHandler(this.InGame_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.InGame_KeyDown);

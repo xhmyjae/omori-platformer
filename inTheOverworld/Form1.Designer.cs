@@ -67,11 +67,11 @@
             // 
             this.Title2Menu.BackColor = System.Drawing.Color.Transparent;
             this.Title2Menu.Font = new System.Drawing.Font("Bradley Hand ITC", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Title2Menu.Location = new System.Drawing.Point(541, 227);
+            this.Title2Menu.Location = new System.Drawing.Point(296, 227);
             this.Title2Menu.Name = "Title2Menu";
-            this.Title2Menu.Size = new System.Drawing.Size(245, 38);
+            this.Title2Menu.Size = new System.Drawing.Size(296, 38);
             this.Title2Menu.TabIndex = 2;
-            this.Title2Menu.Text = "in the overworld...";
+            this.Title2Menu.Text = "A day in headspace...";
             // 
             // PlayButton
             // 
@@ -133,7 +133,7 @@
             this.MinimumSize = new System.Drawing.Size(916, 616);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "A day in the overworld";
+            this.Text = "A day in headspace";
             ((System.ComponentModel.ISupportInitialize)(this.Title1Menu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OmoriNPCMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.menuTimer)).EndInit();

@@ -68,6 +68,7 @@
         <Compile Include="InGame.Designer.cs">
           <DependentUpon>InGame.cs</DependentUpon>
         </Compile>
+        <Compile Include="Player.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <EmbeddedResource Include="Form1.resx">
