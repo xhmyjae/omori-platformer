@@ -20,3 +20,5 @@ C:\Users\jaech\OneDrive\Documents\cours\csharp\omori-platformer\inTheOverworld\o
 C:\Users\jaech\OneDrive\Documents\cours\csharp\omori-platformer\inTheOverworld\obj\Debug\inTheOverworld.csproj.CoreCompileInputs.cache
 C:\Users\jaech\OneDrive\Documents\cours\csharp\omori-platformer\inTheOverworld\obj\Debug\inTheOverworld.exe
 C:\Users\jaech\OneDrive\Documents\cours\csharp\omori-platformer\inTheOverworld\obj\Debug\inTheOverworld.pdb
+D:\Users\jaech\Desktop\s t u d i e s\YNOV\L2\CSharp\inTheOverworld\inTheOverworld\bin\Debug\NAudio.dll
+D:\Users\jaech\Desktop\s t u d i e s\YNOV\L2\CSharp\inTheOverworld\inTheOverworld\bin\Debug\NAudio.xml

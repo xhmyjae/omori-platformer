@@ -6,7 +6,9 @@ using System.Windows.Forms;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
-using System.Media;
+// using System.Media;
+using NAudio.Wave;
+using NAudio.CoreAudioApi;
 
 namespace inTheOverworld
 {
@@ -28,12 +30,34 @@ namespace inTheOverworld
         private int _movingBlock3Speed = 2;
         
         // Musics related :
-        SoundPlayer _st = new SoundPlayer(@"../../Resources/OMORI OST - 012 Trees__mp3.wav");
+        private WaveStream _backgroundSound;
+        private WaveOut _outBackgroundSound;
+        private WaveStream _itemSound;
+        private WaveOut _outItemSound;
+        
+        // private SoundPlayer _st = new SoundPlayer(@"../../Resources/OMORI OST - 012 Trees__mp3.wav");
+        // private SoundPlayer _itemsSound = new SoundPlayer(@"../../Resources/itemSound.wav");
+        
+        // WMPLib.WindowsMediaPlayer wplayer = new WMPLib.WindowsMediaPlayer();
+        // WMPLib.WindowsMediaPlayer wplayer2 = new WMPLib.WindowsMediaPlayer();     
+        // string play_string = "be.mp3";
+        // wplayer.URL = @"SOUND/" + play_string;
+        // wplayer.controls.play();
+        // string play_string2 = "ba.mp3";
+        // wplayer2.URL = @"SOUND/" + play_string2;
+        // wplayer2.controls.play();
 
         public InGame()
         {
             InitializeComponent();
-            _st.PlayLooping();
+            // _st.PlayLooping();
+            _backgroundSound = new AudioFileReader(@"../../Resources/OMORI OST - 012 Trees__mp3.wav");
+            _outBackgroundSound = new WaveOut();
+            _outBackgroundSound.Init(_backgroundSound);
+            _itemSound = new AudioFileReader(@"../../Resources/healSound.wav");
+            _outItemSound = new WaveOut();
+            _outItemSound.Init(_itemSound);
+
             _enemy1 = new Enemy(2, Bunny1.Top, HitBlock16.Right, Bunny1.Bottom, HitBlock14.Left, true, Bunny1);
             _enemy2 = new Enemy(2, Bunny2.Top, HitBlock7.Right, Bunny2.Bottom, HitBlock5.Left, true, Bunny2);
             _enemy3 = new Enemy(3, 0, Crawler1.Right, Crawler1.Height, Crawler1.Left, true, Crawler1);
@@ -41,13 +65,17 @@ namespace inTheOverworld
             
         private void InGame_FormClosing(object sender, FormClosingEventArgs e)
         {
-            _st.Stop();
+            // _st.Stop();
+            _outBackgroundSound.Stop();
+            gameTimer.Enabled = false;
             Form1 menu = new Form1();
             menu.Show();
         }
 
         private void InGame_Load(object sender, EventArgs e)
         {
+            _backgroundSound.CurrentTime = new TimeSpan(0L);
+            _outBackgroundSound.Play();
             // set game up
         }
         
@@ -97,6 +125,11 @@ namespace inTheOverworld
         private void gameTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
             _isOnGround = false;
+            if (_outBackgroundSound.PlaybackState is PlaybackState.Stopped)
+            {
+                _backgroundSound.CurrentTime = new TimeSpan(0L);
+                _outBackgroundSound.Play();
+            }
             
             // Makes player jump
             if (_isJumping)
@@ -173,12 +206,16 @@ namespace inTheOverworld
                     {
                         this.Controls.Remove(control);
                         _score++;
+                        _itemSound.CurrentTime = new TimeSpan(0L);
+                        _outItemSound.Play();
                     }
 
                     if (control.Tag == "jamItem")
                     {
                         this.Controls.Remove(control);
                         _hasJam = true;
+                        _itemSound.CurrentTime = new TimeSpan(0L);
+                        _outItemSound.Play();
                     }
                 }
             }
