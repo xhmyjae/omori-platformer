@@ -91,7 +91,7 @@ namespace inTheOverworld
             this.HitBlock25 = new System.Windows.Forms.PictureBox();
             this.HitBlock26 = new System.Windows.Forms.PictureBox();
             this.gameTimer = new System.Timers.Timer();
-            this.label1 = new System.Windows.Forms.Label();
+            this.loseTimer = new System.Timers.Timer();
             ((System.ComponentModel.ISupportInitialize)(this.HitBlock1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HitBloc2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HitBloc3)).BeginInit();
@@ -152,6 +152,7 @@ namespace inTheOverworld
             ((System.ComponentModel.ISupportInitialize)(this.HitBlock25)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HitBlock26)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gameTimer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loseTimer)).BeginInit();
             this.SuspendLayout();
             // 
             // HitBlock1
@@ -413,7 +414,7 @@ namespace inTheOverworld
             // 
             this.MovingBlock1.BackColor = System.Drawing.Color.Transparent;
             this.MovingBlock1.Image = global::inTheOverworld.Properties.Resources.blocMoving;
-            this.MovingBlock1.Location = new System.Drawing.Point(160, 317);
+            this.MovingBlock1.Location = new System.Drawing.Point(160, 300);
             this.MovingBlock1.Name = "MovingBlock1";
             this.MovingBlock1.Size = new System.Drawing.Size(96, 12);
             this.MovingBlock1.TabIndex = 31;
@@ -424,7 +425,7 @@ namespace inTheOverworld
             // 
             this.MovingBlock3.BackColor = System.Drawing.Color.Transparent;
             this.MovingBlock3.Image = global::inTheOverworld.Properties.Resources.blocMoving;
-            this.MovingBlock3.Location = new System.Drawing.Point(651, 388);
+            this.MovingBlock3.Location = new System.Drawing.Point(651, 358);
             this.MovingBlock3.Name = "MovingBlock3";
             this.MovingBlock3.Size = new System.Drawing.Size(96, 12);
             this.MovingBlock3.TabIndex = 32;
@@ -633,7 +634,7 @@ namespace inTheOverworld
             this.Hector2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Hector2.TabIndex = 51;
             this.Hector2.TabStop = false;
-            this.Hector2.Tag = "itemBlock";
+            this.Hector2.Tag = "hectorItem";
             // 
             // Hector3
             // 
@@ -843,19 +844,16 @@ namespace inTheOverworld
             this.gameTimer.SynchronizingObject = this;
             this.gameTimer.Elapsed += new System.Timers.ElapsedEventHandler(this.gameTimer_Elapsed);
             // 
-            // label1
+            // loseTimer
             // 
-            this.label1.Location = new System.Drawing.Point(569, 117);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(196, 45);
-            this.label1.TabIndex = 69;
+            this.loseTimer.Interval = 1000D;
+            this.loseTimer.SynchronizingObject = this;
             // 
             // InGame
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::inTheOverworld.Properties.Resources.Space_parallax;
             this.ClientSize = new System.Drawing.Size(910, 581);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.HitBlock26);
             this.Controls.Add(this.HitBlock25);
             this.Controls.Add(this.HitBlock24);
@@ -986,10 +984,11 @@ namespace inTheOverworld
             ((System.ComponentModel.ISupportInitialize)(this.HitBlock25)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HitBlock26)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gameTimer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loseTimer)).EndInit();
             this.ResumeLayout(false);
         }
 
-        private System.Windows.Forms.Label label1;
+        private System.Timers.Timer loseTimer;
 
         private System.Timers.Timer gameTimer;
 

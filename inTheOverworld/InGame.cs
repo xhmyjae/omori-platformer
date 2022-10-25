@@ -1,7 +1,12 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Drawing;
 using System.Timers;
 using System.Windows.Forms;
 using System.Linq;
+using System.Runtime.InteropServices;
+using System.Runtime.InteropServices.ComTypes;
+using System.Media;
 
 namespace inTheOverworld
 {
@@ -15,22 +20,28 @@ namespace inTheOverworld
         private int _score;
         
         // Enemies related :
-        private int _enemy1Speed = 2;
-        private int _enemy2Speed = 2;
-        private int _enemy3Speed = 3;
-        
+        private Enemy _enemy1, _enemy2, _enemy3;
+
         // Blocks related :
         private int _movingBlock1Speed = 2;
         private int _movingBlock2Speed = 1;
         private int _movingBlock3Speed = 2;
+        
+        // Musics related :
+        SoundPlayer _st = new SoundPlayer(@"../../Resources/OMORI OST - 012 Trees__mp3.wav");
 
         public InGame()
         {
             InitializeComponent();
-        }
-
+            _st.PlayLooping();
+            _enemy1 = new Enemy(2, Bunny1.Top, HitBlock16.Right, Bunny1.Bottom, HitBlock14.Left, true, Bunny1);
+            _enemy2 = new Enemy(2, Bunny2.Top, HitBlock7.Right, Bunny2.Bottom, HitBlock5.Left, true, Bunny2);
+            _enemy3 = new Enemy(3, 0, Crawler1.Right, Crawler1.Height, Crawler1.Left, true, Crawler1);
+        } 
+            
         private void InGame_FormClosing(object sender, FormClosingEventArgs e)
         {
+            _st.Stop();
             Form1 menu = new Form1();
             menu.Show();
         }
@@ -86,16 +97,16 @@ namespace inTheOverworld
         private void gameTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
             _isOnGround = false;
-
+            
             // Makes player jump
-            if (_isJumping && Player1.Top > 0)
+            if (_isJumping)
             {
                 Player1.Top -= _force;
                 _force--;
             }
 
             // Interactions with blocs
-            foreach (Control control in this.Controls)
+            foreach (PictureBox control in this.Controls)
             {
                 if (Player1.Bounds.IntersectsWith(control.Bounds))
                 {
@@ -111,10 +122,11 @@ namespace inTheOverworld
 
                         int index = values.Min();
 
+                        // Collisions
                         switch (Array.IndexOf(values, index))
                         {
                             case 0:
-                                Player1.Top = control.Top +2 - Player1.Height;
+                                Player1.Top = control.Top + 2 - Player1.Height;
                                 _force = 0;
                                 _isOnGround = true;
                                 _isJumping = false;
@@ -125,6 +137,7 @@ namespace inTheOverworld
                                 break;
                             case 2:
                                 Player1.Top = control.Bottom;
+                                _isJumping = false;
                                 break;
                             case 3:
                                 Player1.Left = control.Right;
@@ -136,12 +149,23 @@ namespace inTheOverworld
                     {
                         if (_hasJam)
                         {
-                            control.Enabled = false;
-                            // change image og this control to bread
+                           // change enemy is alive a false
+                           if (control == _enemy1.EnemyBox)
+                           {
+                               _enemy1.DisableEnemy();
+                           } else if (control == _enemy2.EnemyBox)
+                           {
+                               _enemy2.DisableEnemy();
+                           } else
+                           {
+                               _enemy3.DisableEnemy();
+                           }
+
+                           _hasJam = false;
                         }
                         else
                         {
-                            // Lose
+                            lose();
                         }
                     }
                     
@@ -162,52 +186,49 @@ namespace inTheOverworld
             // Makes character move
             if (!_isOnGround) Player1.Top += _player1Speed;
 
-            if (_isGoingLeft && Player1.Left > 0)
-            {
-                Player1.Left -= _player1Speed;
-            }
+            if (_isGoingLeft && Player1.Left > 0) Player1.Left -= _player1Speed;
 
-            if (_isGoingRight && Player1.Right < ClientSize.Width)
-            {
-                Player1.Left += _player1Speed;
-            }
+            if (_isGoingRight && Player1.Right < ClientSize.Width) Player1.Left += _player1Speed;
+
+                if (Player1.Bottom >= ClientSize.Height) lose();
 
             // Makes enemies move
-            Bunny1.Left += _enemy1Speed;
-            if (Bunny1.Left <= HitBlock14.Left)
-            {
-                _enemy1Speed = -_enemy1Speed;
-                Bunny1.Image = Properties.Resources.bunnyRight;
-            }
-            if (Bunny1.Right >= HitBlock16.Right)
-            {
-                _enemy1Speed = -_enemy1Speed;
-                Bunny1.Image = Properties.Resources.bunnyLeft;
-            }
-            
-            Bunny2.Left += _enemy2Speed;
-            if (Bunny2.Left <= HitBlock5.Left)
-            {
-                _enemy2Speed = -_enemy2Speed;
-                Bunny2.Image = Properties.Resources.bunnyRight;
-            }
-            if (Bunny2.Right >= HitBlock7.Right)
-            {
-                _enemy2Speed = -_enemy2Speed;
-                Bunny2.Image = Properties.Resources.bunnyLeft;
-            }
+            _enemy1.MoveHorizontal();
+            _enemy2.MoveHorizontal();
+            _enemy3.MoveVertical();
 
-            Crawler1.Top += _enemy3Speed;
-            if (Crawler1.Bottom <= 0)
+            // Makes platform move
+            MovingBlock1.Top += _movingBlock1Speed;
+            if (MovingBlock1.Top <= 140 || MovingBlock1.Bottom >= 335) _movingBlock1Speed = -_movingBlock1Speed;
+
+            MovingBlock3.Top += _movingBlock3Speed;
+            if (MovingBlock3.Top <= 280 || MovingBlock3.Bottom >= 422) _movingBlock3Speed = -_movingBlock3Speed;
+
+            if (_isOnSpecial)
             {
-                _enemy3Speed = -_enemy3Speed;
+                MovingBlock2.Left += _movingBlock2Speed;
+                if (MovingBlock2.Left >= 622) _movingBlock2Speed = 0;
             }
-            if (Crawler1.Bottom >= Crawler1.Height)
+            else
             {
-                _enemy3Speed = -_enemy3Speed;
+                if (MovingBlock2.Left >= 433)
+                {
+                    MovingBlock2.Left -= _movingBlock2Speed;
+                }
             }
 
         }
 
+        private void lose()
+        {
+            //loseTimer += 10;
+            // Label loseLabel = new Label();
+            // loseLabel.Text = "Maybe you should have stayed in White Space today ?";
+            // loseLabel.Size = new Size(ClientSize.Width, ClientSize.Height);
+            // loseLabel.BackgroundImage = Properties.Resources._parallax_black;
+            // gameTimer.Enabled = false;
+            // loseLabel.BringToFront();
+        }
+        
     }
 }
