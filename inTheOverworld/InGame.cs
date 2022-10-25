@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Drawing;
 using System.Timers;
 using System.Windows.Forms;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices.ComTypes;
-// using System.Media;
 using NAudio.Wave;
-using NAudio.CoreAudioApi;
+using WMPLib;
 
 namespace inTheOverworld
 {
@@ -34,29 +30,24 @@ namespace inTheOverworld
         private WaveOut _outBackgroundSound;
         private WaveStream _itemSound;
         private WaveOut _outItemSound;
+        private WaveStream _cutscene1Sound;
+        private WaveOut _outCutscene1Sound;
         
-        // private SoundPlayer _st = new SoundPlayer(@"../../Resources/OMORI OST - 012 Trees__mp3.wav");
-        // private SoundPlayer _itemsSound = new SoundPlayer(@"../../Resources/itemSound.wav");
-        
-        // WMPLib.WindowsMediaPlayer wplayer = new WMPLib.WindowsMediaPlayer();
-        // WMPLib.WindowsMediaPlayer wplayer2 = new WMPLib.WindowsMediaPlayer();     
-        // string play_string = "be.mp3";
-        // wplayer.URL = @"SOUND/" + play_string;
-        // wplayer.controls.play();
-        // string play_string2 = "ba.mp3";
-        // wplayer2.URL = @"SOUND/" + play_string2;
-        // wplayer2.controls.play();
+        // Videos related :
+        private WMPLib.WindowsMediaPlayer _videoPlayer;
 
         public InGame()
         {
             InitializeComponent();
-            // _st.PlayLooping();
             _backgroundSound = new AudioFileReader(@"../../Resources/OMORI OST - 012 Trees__mp3.wav");
             _outBackgroundSound = new WaveOut();
             _outBackgroundSound.Init(_backgroundSound);
             _itemSound = new AudioFileReader(@"../../Resources/healSound.wav");
             _outItemSound = new WaveOut();
             _outItemSound.Init(_itemSound);
+            _cutscene1Sound = new AudioFileReader(@"../../Resources/cutscene1.wav");
+            _outCutscene1Sound = new WaveOut();
+            _outCutscene1Sound.Init(_cutscene1Sound);
 
             _enemy1 = new Enemy(2, Bunny1.Top, HitBlock16.Right, Bunny1.Bottom, HitBlock14.Left, true, Bunny1);
             _enemy2 = new Enemy(2, Bunny2.Top, HitBlock7.Right, Bunny2.Bottom, HitBlock5.Left, true, Bunny2);
@@ -65,7 +56,6 @@ namespace inTheOverworld
             
         private void InGame_FormClosing(object sender, FormClosingEventArgs e)
         {
-            // _st.Stop();
             _outBackgroundSound.Stop();
             gameTimer.Enabled = false;
             Form1 menu = new Form1();
@@ -74,8 +64,8 @@ namespace inTheOverworld
 
         private void InGame_Load(object sender, EventArgs e)
         {
-            _backgroundSound.CurrentTime = new TimeSpan(0L);
-            _outBackgroundSound.Play();
+            // _backgroundSound.CurrentTime = new TimeSpan(0L);
+            // _outBackgroundSound.Play();
             // set game up
         }
         
@@ -143,79 +133,74 @@ namespace inTheOverworld
             {
                 if (Player1.Bounds.IntersectsWith(control.Bounds))
                 {
-                    if (control.Tag == "hitBlock")
+                    switch (control.Tag)
                     {
-                        int[] values =
-                        {
-                            Player1.Bottom - control.Top,
-                            Player1.Right - control.Left,
-                            control.Bottom - Player1.Top,
-                            control.Right - Player1.Left
-                        };
+                        case "hitBlock" :
+                            int[] values =
+                            {
+                                Player1.Bottom - control.Top,
+                                Player1.Right - control.Left,
+                                control.Bottom - Player1.Top,
+                                control.Right - Player1.Left
+                            };
 
-                        int index = values.Min();
+                            int index = values.Min();
 
-                        // Collisions
-                        switch (Array.IndexOf(values, index))
-                        {
-                            case 0:
-                                Player1.Top = control.Top + 2 - Player1.Height;
-                                _force = 0;
-                                _isOnGround = true;
-                                _isJumping = false;
-                                _isOnSpecial = control == MovingBlock2;
-                                break;
-                            case 1:
-                                Player1.Left = control.Left - Player1.Width;
-                                break;
-                            case 2:
-                                Player1.Top = control.Bottom;
-                                _isJumping = false;
-                                break;
-                            case 3:
-                                Player1.Left = control.Right;
-                                break;
-                        }
-                    }
-                    
-                    if (control.Tag == "enemies")
-                    {
-                        if (_hasJam)
-                        {
-                           // change enemy is alive a false
-                           if (control == _enemy1.EnemyBox)
-                           {
-                               _enemy1.DisableEnemy();
-                           } else if (control == _enemy2.EnemyBox)
-                           {
-                               _enemy2.DisableEnemy();
-                           } else
-                           {
-                               _enemy3.DisableEnemy();
-                           }
+                            // Collisions
+                            switch (Array.IndexOf(values, index))
+                            {
+                                case 0:
+                                    Player1.Top = control.Top + 2 - Player1.Height;
+                                    _force = 0;
+                                    _isOnGround = true;
+                                    _isJumping = false;
+                                    _isOnSpecial = control == MovingBlock2;
+                                    break;
+                                case 1:
+                                    Player1.Left = control.Left - Player1.Width;
+                                    break;
+                                case 2:
+                                    Player1.Top = control.Bottom;
+                                    _isJumping = false;
+                                    break;
+                                case 3:
+                                    Player1.Left = control.Right;
+                                    break;
+                            }
+                            break;
+                        case "enemies" :
+                            if (_hasJam)
+                            {
+                                if (control == _enemy1.EnemyBox)
+                                {
+                                    _enemy1.DisableEnemy();
+                                } else if (control == _enemy2.EnemyBox)
+                                {
+                                    _enemy2.DisableEnemy();
+                                } else
+                                {
+                                    _enemy3.DisableEnemy();
+                                }
 
-                           _hasJam = false;
-                        }
-                        else
-                        {
-                            lose();
-                        }
-                    }
-                    
-                    if (control.Tag == "hectorItem")
-                    {
-                        this.Controls.Remove(control);
-                        _score++;
-                        _itemSound.CurrentTime = new TimeSpan(0L);
-                        _outItemSound.Play();
-                    }
-
-                    if (control.Tag == "jamItem")
-                    {
-                        this.Controls.Remove(control);
-                        _hasJam = true;
-                        _itemSound.CurrentTime = new TimeSpan(0L);
-                        _outItemSound.Play();
+                                _hasJam = false;
+                            }
+                            else
+                            {
+                                win();
+                            }
+                            break;
+                        case "hectorItem" :
+                            this.Controls.Remove(control);
+                            _score++;
+                            _itemSound.CurrentTime = new TimeSpan(0L);
+                            _outItemSound.Play();
+                            break;
+                        case "jamItem" :
+                            this.Controls.Remove(control);
+                            _hasJam = true;
+                            _itemSound.CurrentTime = new TimeSpan(0L);
+                            _outItemSound.Play();
+                            break;
                     }
                 }
             }
@@ -254,6 +239,21 @@ namespace inTheOverworld
                 }
             }
 
+        }
+
+        private void win()
+        {
+            gameTimer.Enabled = false;
+            _outBackgroundSound.Stop();
+            PictureBox cutscene = new PictureBox();
+            cutscene.Size = new Size(ClientSize.Width, ClientSize.Height);
+            cutscene.Location = new Point(0, 0);
+            cutscene.ImageLocation = @"../../Resources/cutscene1.gif";
+            cutscene.SizeMode = PictureBoxSizeMode.StretchImage;
+            Controls.Add(cutscene);
+            _cutscene1Sound.CurrentTime = new TimeSpan(0L);
+            _outCutscene1Sound.Play();
+            cutscene.BringToFront();
         }
 
         private void lose()

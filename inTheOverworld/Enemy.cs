@@ -1,14 +1,15 @@
 ﻿using System.Windows.Forms;
+using NAudio.Wave;
+using System;
 
 namespace inTheOverworld
 {
     public class Enemy
     {
+        private WaveStream _toastSound;
+        private WaveOut _outToastSound;
+        
         public int EnemySpeed {get;set;}
-        /*public int EnemyLeft {get;set;}
-        public int EnemyRight {get;set;}
-        public int EnemyTop {get;set;}
-        public int EnemyBottom {get;set;}*/
         public int MaxTop{get;set;}
         public int MaxRight{get;set;}
         public int MaxBottom{get;set;}
@@ -19,10 +20,6 @@ namespace inTheOverworld
         public Enemy(int enemySpeed, int maxTop, int maxRight, int maxBottom, int maxLeft, bool isAlive, PictureBox enemyBox)
         {
             EnemySpeed = enemySpeed;
-            /*EnemyTop = enemyTop;
-            EnemyRight = enemyRight;
-            EnemyBottom = enemyBottom;
-            EnemyLeft = enemyLeft;*/
             MaxTop = maxTop;
             MaxRight = maxRight;
             MaxBottom = maxBottom;
@@ -67,6 +64,12 @@ namespace inTheOverworld
         
         public void DisableEnemy()
         {
+            _toastSound = new AudioFileReader(@"../../Resources/toastSound.wav");
+            _outToastSound = new WaveOut();
+            _outToastSound.Init(_toastSound);
+            _toastSound.CurrentTime = new TimeSpan(0L);
+            _outToastSound.Play();
+            
             IsAlive = false;
             EnemyBox.Enabled = false;
             EnemyBox.Image = Properties.Resources.bread;

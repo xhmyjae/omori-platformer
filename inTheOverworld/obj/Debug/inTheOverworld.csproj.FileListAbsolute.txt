@@ -22,3 +22,5 @@ C:\Users\jaech\OneDrive\Documents\cours\csharp\omori-platformer\inTheOverworld\o
 C:\Users\jaech\OneDrive\Documents\cours\csharp\omori-platformer\inTheOverworld\obj\Debug\inTheOverworld.pdb
 D:\Users\jaech\Desktop\s t u d i e s\YNOV\L2\CSharp\inTheOverworld\inTheOverworld\bin\Debug\NAudio.dll
 D:\Users\jaech\Desktop\s t u d i e s\YNOV\L2\CSharp\inTheOverworld\inTheOverworld\bin\Debug\NAudio.xml
+D:\Users\jaech\Desktop\s t u d i e s\YNOV\L2\CSharp\inTheOverworld\inTheOverworld\bin\Debug\AxInterop.WMPLib.dll
+D:\Users\jaech\Desktop\s t u d i e s\YNOV\L2\CSharp\inTheOverworld\inTheOverworld\bin\Debug\Interop.WMPLib.dll

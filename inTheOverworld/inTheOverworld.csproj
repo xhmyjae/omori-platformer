@@ -33,6 +33,12 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
+        <Reference Include="AxInterop.WMPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>..\packages\WMPLib.1.0.0\lib\AxInterop.WMPLib.dll</HintPath>
+        </Reference>
+        <Reference Include="Interop.WMPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>..\packages\WMPLib.1.0.0\lib\Interop.WMPLib.dll</HintPath>
+        </Reference>
         <Reference Include="NAudio, Version=1.10.0.0, Culture=neutral, processorArchitecture=MSIL">
           <HintPath>..\packages\NAudio.1.10.0\lib\net35\NAudio.dll</HintPath>
         </Reference>
@@ -112,6 +118,9 @@
       <Content Include="Resources\bunnyLeft.png" />
       <Content Include="Resources\bunnyRight.png" />
       <Content Include="Resources\crawler.png" />
+      <Content Include="Resources\cutscene1.gif" />
+      <Content Include="Resources\cutscene1.mp4" />
+      <Content Include="Resources\cutscene1.wav" />
       <Content Include="Resources\enemy.png" />
       <Content Include="Resources\HECTOR.png" />
       <Content Include="Resources\hectorRotation.gif" />
@@ -126,6 +135,7 @@
       <Content Include="Resources\omoriRight3.png" />
       <Content Include="Resources\OMORI_logo.png" />
       <Content Include="Resources\Space_parallax.png" />
+      <Content Include="Resources\toastSound.wav" />
       <Content Include="Resources\_parallax_black.png" />
       <Content Include="Resources\_polaroidBG_FA_day.png" />
     </ItemGroup>

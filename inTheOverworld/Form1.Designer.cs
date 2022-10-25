@@ -35,8 +35,10 @@
             this.PlayButton = new System.Windows.Forms.Button();
             this.HelpButton = new System.Windows.Forms.Button();
             this.ExitButton = new System.Windows.Forms.Button();
+            this.menuTimer = new System.Timers.Timer();
             ((System.ComponentModel.ISupportInitialize)(this.Title1Menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OmoriNPCMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.menuTimer)).BeginInit();
             this.SuspendLayout();
             // 
             // Title1Menu
@@ -108,6 +110,13 @@
             this.ExitButton.Text = "Exit";
             this.ExitButton.UseVisualStyleBackColor = false;
             // 
+            // menuTimer
+            // 
+            this.menuTimer.Enabled = true;
+            this.menuTimer.Interval = 20D;
+            this.menuTimer.SynchronizingObject = this;
+            this.menuTimer.Elapsed += new System.Timers.ElapsedEventHandler(this.menuTimer_Elapsed);
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -127,8 +136,11 @@
             this.Text = "A day in the overworld";
             ((System.ComponentModel.ISupportInitialize)(this.Title1Menu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OmoriNPCMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.menuTimer)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private System.Timers.Timer menuTimer;
 
         private System.Windows.Forms.Button PlayButton;
         private System.Windows.Forms.Button HelpButton;
