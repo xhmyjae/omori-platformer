@@ -1,5 +1,8 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
+using System;
+using System.Linq;
+using NAudio.Wave;
 
 namespace inTheOverworld
 {
@@ -97,6 +100,75 @@ namespace inTheOverworld
             if (IsGoingRight && PlayerBox.Right < clientSize.Width) PlayerBox.Left += PlayerSpeed;
             
             if (PlayerBox.Bottom >= clientSize.Height) Lose();
+        }
+
+        public void CollisionsHitBlock(Control control, PictureBox specialBlock)
+        {
+            int[] values =
+            {
+                PlayerBox.Bottom - control.Top,
+                PlayerBox.Right - control.Left,
+                control.Bottom - PlayerBox.Top,
+                control.Right - PlayerBox.Left
+            };
+
+            int index = values.Min();
+
+            // Collisions
+            switch (Array.IndexOf(values, index))
+            {
+                case 0:
+                    PlayerBox.Top = control.Top + 2 - PlayerBox.Height;
+                    Force = 0;
+                    IsOnGround = true;
+                    IsJumping = false;
+                    IsOnSpecial = control == specialBlock;
+                    break;
+                case 1:
+                    PlayerBox.Left = control.Left - PlayerBox.Width;
+                    break;
+                case 2:
+                    PlayerBox.Top = control.Bottom;
+                    IsJumping = false;
+                    break;
+                case 3:
+                    PlayerBox.Left = control.Right;
+                    break;
+            }
+        }
+
+        public void CollisionsEnemies(PictureBox control, Enemy[] enemies)
+        {
+            if (HasJam)
+            {
+                foreach (Enemy enemy in enemies)
+                {
+                    if (control == enemy.EnemyBox)
+                    {
+                        enemy.DisableEnemy();
+                    }
+                }
+                HasJam = false;
+            }
+            else
+            {
+                Lose();
+            }
+        }
+
+        public void CollisionsItems(PictureBox control, WaveStream waveStream, WaveOut waveOut)
+        {
+            switch (control.Tag)
+            {
+                case "hectorItem" : 
+                    Score++;
+                    break;
+                case "jamItem" :
+                    HasJam = true;
+                    break;
+            }
+            waveStream.CurrentTime = new TimeSpan(0L);
+            waveOut.Play();
         }
         
         public void Win()

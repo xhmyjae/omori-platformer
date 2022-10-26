@@ -90,6 +90,7 @@ namespace inTheOverworld
             _player.Jump();
 
             // Interactions with blocs
+            Enemy[] enemies = {_enemy1, _enemy2, _enemy3};
             foreach (PictureBox control in this.Controls)
             {
                 if (_player.PlayerBox.Bounds.IntersectsWith(control.Bounds))
@@ -97,70 +98,15 @@ namespace inTheOverworld
                     switch (control.Tag)
                     {
                         case "hitBlock" :
-                            int[] values =
-                            {
-                                _player.PlayerBox.Bottom - control.Top,
-                                _player.PlayerBox.Right - control.Left,
-                                control.Bottom - _player.PlayerBox.Top,
-                                control.Right - _player.PlayerBox.Left
-                            };
-
-                            int index = values.Min();
-
-                            // Collisions
-                            switch (Array.IndexOf(values, index))
-                            {
-                                case 0:
-                                    _player.PlayerBox.Top = control.Top + 2 - _player.PlayerBox.Height;
-                                    _player.Force = 0;
-                                    _player.IsOnGround = true;
-                                    _player.IsJumping = false;
-                                    _player.IsOnSpecial = control == MovingBlock2;
-                                    break;
-                                case 1:
-                                    _player.PlayerBox.Left = control.Left - _player.PlayerBox.Width;
-                                    break;
-                                case 2:
-                                    _player.PlayerBox.Top = control.Bottom;
-                                    _player.IsJumping = false;
-                                    break;
-                                case 3:
-                                    _player.PlayerBox.Left = control.Right;
-                                    break;
-                            }
+                            _player.CollisionsHitBlock(control, MovingBlock2);
                             break;
                         case "enemies" :
-                            if (_player.HasJam)
-                            {
-                                if (control == _enemy1.EnemyBox)
-                                {
-                                    _enemy1.DisableEnemy();
-                                } else if (control == _enemy2.EnemyBox)
-                                {
-                                    _enemy2.DisableEnemy();
-                                } else
-                                {
-                                    _enemy3.DisableEnemy();
-                                }
-
-                                _player.HasJam = false;
-                            }
-                            else
-                            {
-                                _player.Win();
-                            }
+                            _player.CollisionsEnemies(control, enemies);
                             break;
                         case "hectorItem" :
-                            this.Controls.Remove(control);
-                            _player.Score++;
-                            _itemSound.CurrentTime = new TimeSpan(0L);
-                            _outItemSound.Play();
-                            break;
                         case "jamItem" :
                             this.Controls.Remove(control);
-                            _player.HasJam = true;
-                            _itemSound.CurrentTime = new TimeSpan(0L);
-                            _outItemSound.Play();
+                            _player.CollisionsItems(control, _itemSound, _outItemSound);
                             break;
                     }
                 }
