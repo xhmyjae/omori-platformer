@@ -22,8 +22,10 @@ namespace inTheOverworld
         {
             _outBackgroundSound.Stop();
             menuTimer.Enabled = false;
-            InGame inGame = new InGame();
-            inGame.Show();
+            GameLose lose = new GameLose();
+            lose.Show();
+            // InGame inGame = new InGame();
+            // inGame.Show();
             Hide();
         }
 

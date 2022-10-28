@@ -39,3 +39,9 @@ D:\Users\jaech\Desktop\s t u d i e s\YNOV\L2\CSharp\omori-platformer\inTheOverwo
 D:\Users\jaech\Desktop\s t u d i e s\YNOV\L2\CSharp\omori-platformer\inTheOverworld\obj\Debug\inTheOverworld.csproj.CoreCompileInputs.cache
 D:\Users\jaech\Desktop\s t u d i e s\YNOV\L2\CSharp\omori-platformer\inTheOverworld\obj\Debug\inTheOverworld.exe
 D:\Users\jaech\Desktop\s t u d i e s\YNOV\L2\CSharp\omori-platformer\inTheOverworld\obj\Debug\inTheOverworld.pdb
+C:\Users\jaech\OneDrive\Documents\cours\csharp\omori-platformer\inTheOverworld\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\jaech\OneDrive\Documents\cours\csharp\omori-platformer\inTheOverworld\bin\Debug\Interop.WMPLib.dll
+C:\Users\jaech\OneDrive\Documents\cours\csharp\omori-platformer\inTheOverworld\bin\Debug\NAudio.dll
+C:\Users\jaech\OneDrive\Documents\cours\csharp\omori-platformer\inTheOverworld\bin\Debug\NAudio.xml
+C:\Users\jaech\OneDrive\Documents\cours\csharp\omori-platformer\inTheOverworld\obj\Debug\inTheOverworld.GameLose.resources
+C:\Users\jaech\OneDrive\Documents\cours\csharp\omori-platformer\inTheOverworld\obj\Debug\inTheOverworld.csproj.CopyComplete

@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using System;
 using System.Linq;
 using NAudio.Wave;
+using System.Runtime.InteropServices;
 
 namespace inTheOverworld
 {
@@ -91,7 +92,7 @@ namespace inTheOverworld
             }
         }
 
-        public void Move(Size clientSize)
+        public void Move(Size clientSize, Form form)
         {
             if (!IsOnGround) PlayerBox.Top += PlayerSpeed;
 
@@ -99,10 +100,10 @@ namespace inTheOverworld
 
             if (IsGoingRight && PlayerBox.Right < clientSize.Width) PlayerBox.Left += PlayerSpeed;
             
-            if (PlayerBox.Bottom >= clientSize.Height) Lose();
+            if (PlayerBox.Bottom >= clientSize.Height) Lose(form);
         }
 
-        public void CollisionsHitBlock(Control control, PictureBox specialBlock)
+        public void CollisionsHitBlock(Control control, [ Optional ] PictureBox specialBlock)
         {
             int[] values =
             {
@@ -137,7 +138,7 @@ namespace inTheOverworld
             }
         }
 
-        public void CollisionsEnemies(PictureBox control, Enemy[] enemies)
+        public void CollisionsEnemies(PictureBox control, Enemy[] enemies, Form form)
         {
             if (HasJam)
             {
@@ -152,7 +153,7 @@ namespace inTheOverworld
             }
             else
             {
-                Lose();
+                Lose(form);
             }
         }
 
@@ -186,8 +187,13 @@ namespace inTheOverworld
             // cutscene.BringToFront();
         }
         
-        public void Lose()
+        public void Lose(Form form)
         {
+            // show gameLose form
+            form.Close();
+            GameLose loseScreen = new GameLose();
+            loseScreen.Show();
+            
             //loseTimer += 10;
             // Label loseLabel = new Label();
             // loseLabel.Text = "Maybe you should have stayed in White Space today ?";
@@ -195,6 +201,12 @@ namespace inTheOverworld
             // loseLabel.BackgroundImage = Properties.Resources._parallax_black;
             // gameTimer.Enabled = false;
             // loseLabel.BringToFront();
+        }
+        
+        public void End(Form form)
+        {
+            // show gif, get back to menu
+            form.Close();
         }
         
     }

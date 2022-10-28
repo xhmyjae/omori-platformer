@@ -102,6 +102,16 @@ namespace inTheOverworld.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap blocDoorReverse {
+            get {
+                object obj = ResourceManager.GetObject("blocDoorReverse", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap blocFlower {
             get {
                 object obj = ResourceManager.GetObject("blocFlower", resourceCulture);
@@ -212,9 +222,29 @@ namespace inTheOverworld.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap blocSolo21 {
+            get {
+                object obj = ResourceManager.GetObject("blocSolo21", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap blocTree {
             get {
                 object obj = ResourceManager.GetObject("blocTree", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap book_reverse {
+            get {
+                object obj = ResourceManager.GetObject("book_reverse", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -245,6 +275,16 @@ namespace inTheOverworld.Properties {
         internal static System.Drawing.Bitmap bunnyRight {
             get {
                 object obj = ResourceManager.GetObject("bunnyRight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap computer_reverse {
+            get {
+                object obj = ResourceManager.GetObject("computer_reverse", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -332,6 +372,56 @@ namespace inTheOverworld.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap key {
+            get {
+                object obj = ResourceManager.GetObject("key", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap key_reverse {
+            get {
+                object obj = ResourceManager.GetObject("key_reverse", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap key2 {
+            get {
+                object obj = ResourceManager.GetObject("key2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lamp_reverse {
+            get {
+                object obj = ResourceManager.GetObject("lamp_reverse", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mewo_reverse {
+            get {
+                object obj = ResourceManager.GetObject("mewo_reverse", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap OMORI_logo {
             get {
                 object obj = ResourceManager.GetObject("OMORI_logo", resourceCulture);
@@ -385,6 +475,16 @@ namespace inTheOverworld.Properties {
         internal static System.Drawing.Bitmap Space_parallax {
             get {
                 object obj = ResourceManager.GetObject("Space_parallax", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tissues_reverse {
+            get {
+                object obj = ResourceManager.GetObject("tissues_reverse", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

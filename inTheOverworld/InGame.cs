@@ -1,21 +1,13 @@
 ﻿using System;
-using System.Drawing;
 using System.Timers;
 using System.Windows.Forms;
-using System.Linq;
 using NAudio.Wave;
-using WMPLib;
 
 namespace inTheOverworld
 {
     public partial class InGame : Form
     {
         // Player related :
-        // private bool _isGoingLeft, _isGoingRight, _isJumping, _isTouchingEnemies, _isOnSpecial, _isOnGround, _hasJam;
-        // private int _player1Speed = 5;
-        // private int _player1JumpSpeed = 17;
-        // private int _force;
-        // private int _score;
         private Player _player;
         
         // Enemies related :
@@ -37,6 +29,7 @@ namespace inTheOverworld
         public InGame()
         {
             InitializeComponent();
+            
             _backgroundSound = new AudioFileReader(@"../../Resources/OMORI OST - 012 Trees__mp3.wav");
             _outBackgroundSound = new WaveOut();
             _outBackgroundSound.Init(_backgroundSound);
@@ -101,7 +94,7 @@ namespace inTheOverworld
                             _player.CollisionsHitBlock(control, MovingBlock2);
                             break;
                         case "enemies" :
-                            _player.CollisionsEnemies(control, enemies);
+                            _player.CollisionsEnemies(control, enemies, this);
                             break;
                         case "hectorItem" :
                         case "jamItem" :
@@ -113,7 +106,7 @@ namespace inTheOverworld
             }
             
             // Makes character move
-            _player.Move(ClientSize);
+            _player.Move(ClientSize, this);
 
             // Makes enemies move
             _enemy1.MoveHorizontal();
