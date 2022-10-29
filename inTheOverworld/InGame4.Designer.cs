@@ -142,7 +142,7 @@ namespace inTheOverworld
             // cutsceneTimer
             // 
             this.cutsceneTimer.Enabled = true;
-            this.cutsceneTimer.Interval = 1500D;
+            this.cutsceneTimer.Interval = 500D;
             this.cutsceneTimer.SynchronizingObject = this;
             this.cutsceneTimer.Elapsed += new System.Timers.ElapsedEventHandler(this.cutsceneTimer_Elapsed);
             // 
@@ -156,6 +156,7 @@ namespace inTheOverworld
             // 
             this.cutscene2Timer.Interval = 1000D;
             this.cutscene2Timer.SynchronizingObject = this;
+            this.cutscene2Timer.Elapsed += new System.Timers.ElapsedEventHandler(this.cutscene2Timer_Elapsed);
             // 
             // Player1
             // 

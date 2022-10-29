@@ -130,27 +130,26 @@ namespace inTheOverworld
         int _count2 = 0;
         Image[] _images2 =
         {
-            Properties.Resources.cutscene0_1,
-            Properties.Resources.cutscene0_2,
-            Properties.Resources.cutscene0_3,
-            Properties.Resources.cutscene0_4,
-            Properties.Resources.cutscene0_5,
-            Properties.Resources.cutscene0_6,
-            Properties.Resources.cutscene0_7,
-            Properties.Resources.cutscene0_8,
-            Properties.Resources.cutscene0_9,
-            Properties.Resources.cutscene0_10,
-            Properties.Resources.cutscene0_11,
-            Properties.Resources.cutscene0_12,
-            Properties.Resources.cutscene0_13,
-            Properties.Resources.cutscene0_14,
-            Properties.Resources.cutscene0_15,
+            Properties.Resources.cutscene5_1,
+            Properties.Resources.cutscene5_2,
+            Properties.Resources.cutscene5_3,
+            Properties.Resources.cutscene5_4,
+            Properties.Resources.cutscene5_5,
+            Properties.Resources.cutscene5_6,
+            Properties.Resources.cutscene5_7,
+            Properties.Resources.cutscene5_8,
+            Properties.Resources.cutscene5_9,
+            Properties.Resources.cutscene5_10,
+            Properties.Resources.cutscene5_11,
+            Properties.Resources.cutscene5_12,
+            Properties.Resources.cutscene5_13,
+            Properties.Resources.cutscene5_13,
         };
         private void cutscene2Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            if (_count2 < 15)
+            if (_count2 < 14)
             {
-                _cutscene2.Image = _images[_count];
+                _cutscene2.Image = _images2[_count2];
                 _count2++;
             } 
             else
