@@ -162,5 +162,14 @@ namespace inTheOverworld
                 Close();
             }
         }
+
+        private void exit_Click(object sender, EventArgs e)
+        {
+            gameTimer.Enabled = false;
+            _outBackgroundSound.Stop();
+            Close();
+            Form1 menu = new Form1();
+            menu.Show();
+        }
     }
 }

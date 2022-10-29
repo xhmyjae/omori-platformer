@@ -43,6 +43,7 @@ namespace inTheOverworld
             this.Player1 = new System.Windows.Forms.PictureBox();
             this.gameTimer = new System.Timers.Timer();
             this.cutsceneTimer = new System.Timers.Timer();
+            this.exit = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize) (this.HitBlock1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.HitBlock2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.Door1)).BeginInit();
@@ -55,6 +56,7 @@ namespace inTheOverworld
             ((System.ComponentModel.ISupportInitialize) (this.Player1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.gameTimer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.cutsceneTimer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.exit)).BeginInit();
             this.SuspendLayout();
             // 
             // HitBlock1
@@ -190,12 +192,25 @@ namespace inTheOverworld
             this.cutsceneTimer.SynchronizingObject = this;
             this.cutsceneTimer.Elapsed += new System.Timers.ElapsedEventHandler(this.cutsceneTimer_Elapsed);
             // 
+            // exit
+            // 
+            this.exit.BackColor = System.Drawing.Color.Transparent;
+            this.exit.Image = global::inTheOverworld.Properties.Resources.exit_icon;
+            this.exit.Location = new System.Drawing.Point(868, 12);
+            this.exit.Name = "exit";
+            this.exit.Size = new System.Drawing.Size(30, 30);
+            this.exit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.exit.TabIndex = 71;
+            this.exit.TabStop = false;
+            this.exit.Click += new System.EventHandler(this.exit_Click);
+            // 
             // GameLose
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = global::inTheOverworld.Properties.Resources._parallax_black;
             this.ClientSize = new System.Drawing.Size(916, 616);
+            this.Controls.Add(this.exit);
             this.Controls.Add(this.Player1);
             this.Controls.Add(this.Key1);
             this.Controls.Add(this.Computer1);
@@ -227,8 +242,11 @@ namespace inTheOverworld
             ((System.ComponentModel.ISupportInitialize) (this.Player1)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.gameTimer)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.cutsceneTimer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.exit)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.PictureBox exit;
 
         private System.Timers.Timer cutsceneTimer;
 

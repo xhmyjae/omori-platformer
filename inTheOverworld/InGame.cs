@@ -175,6 +175,7 @@ namespace inTheOverworld
         {
             gameTimer.Enabled = false;
             _outBackgroundSound.Stop();
+            Close();
             Form1 menu = new Form1();
             menu.Show();
         }
