@@ -56,6 +56,9 @@ Controls :
 - A and Left => Go left
 - D and Right => Go right
 
+- Jam will allow you to kill one enemy
+- There are 9 hectors on the first level
+
 ## All the features
 - Menu
 - Help page
