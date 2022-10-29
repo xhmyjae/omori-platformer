@@ -20,8 +20,8 @@ namespace inTheOverworld
 
         private void PlayButton_Click(object sender, EventArgs e)
         {
-            _outBackgroundSound.Stop();
             menuTimer.Enabled = false;
+            _outBackgroundSound.Stop();
             InGame inGame = new InGame();
             inGame.Show();
             Hide();
@@ -44,6 +44,15 @@ namespace inTheOverworld
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             Close();
+        }
+
+        private void HelpButton_Click(object sender, EventArgs e)
+        {
+            menuTimer.Enabled = false;
+            _outBackgroundSound.Stop();
+            Help help = new Help();
+            help.Show();
+            Hide();
         }
     }
 }

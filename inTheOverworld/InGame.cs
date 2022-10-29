@@ -3,6 +3,7 @@ using System.Linq;
 using System.Timers;
 using System.Windows.Forms;
 using NAudio.Wave;
+using System.Drawing;
 
 namespace inTheOverworld
 {
@@ -27,6 +28,9 @@ namespace inTheOverworld
         private WaveStream _cutscene1Sound;
         private WaveOut _outCutscene1Sound;
         
+        // Cutscene related :
+        private PictureBox _cutscene;
+        
         public InGame()
         {
             InitializeComponent();
@@ -40,6 +44,15 @@ namespace inTheOverworld
             _cutscene1Sound = new AudioFileReader(@"../../Resources/cutscene1.wav");
             _outCutscene1Sound = new WaveOut();
             _outCutscene1Sound.Init(_cutscene1Sound);
+            
+            _cutscene = new PictureBox();
+            _cutscene.Size = new Size(this.Width, this.Height);
+            _cutscene.Location = new Point(0,0);
+            _cutscene.Visible = true;
+            _cutscene.BackColor = Color.Black;
+            _cutscene.SizeMode = PictureBoxSizeMode.Zoom;
+            Controls.Add(_cutscene);
+            _cutscene.BringToFront();
 
             _player = new Player(false, false, false, false, false, false, false, 5, 17, 0, 0, Player1);
             _enemy1 = new Enemy(2, Bunny1.Top, HitBlock16.Right, Bunny1.Bottom, HitBlock14.Left, true, Bunny1);
@@ -49,19 +62,12 @@ namespace inTheOverworld
             
         private void InGame_FormClosing(object sender, FormClosingEventArgs e)
         {
-            _outBackgroundSound.Stop();
             gameTimer.Enabled = false;
-            Form1 menu = new Form1();
-            menu.Show();
+            // _outBackgroundSound.Stop();
+            // Form1 menu = new Form1();
+            // menu.Show();
         }
 
-        private void InGame_Load(object sender, EventArgs e)
-        {
-            // _backgroundSound.CurrentTime = new TimeSpan(0L);
-            // _outBackgroundSound.Play();
-            // set game up
-        }
-        
         private void InGame_KeyDown(object sender, KeyEventArgs e)
         {
             _player.DownKeys(e);
@@ -71,10 +77,39 @@ namespace inTheOverworld
         {
             _player.UpKeys(e);
         }
+        
+        int _count = 0;
+        Image[] _images =
+        {
+            Properties.Resources.cutscene1_1,
+            Properties.Resources.cutscene1_2,
+            Properties.Resources.cutscene1_3,
+            Properties.Resources.cutscene1_4,
+            Properties.Resources.cutscene1_5,
+            Properties.Resources.cutscene1_6,
+            Properties.Resources.cutscene1_7,
+            Properties.Resources.cutscene1_8,
+        };
+        private void cutsceneTimer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            if (_count < 8)
+            {
+                _cutscene.Image = _images[_count];
+                _count++;
+            } 
+            else
+            {
+                gameTimer.Enabled = true;
+                Controls.Remove(_cutscene);
+                cutsceneTimer.Enabled = false;
+            }
+        }
 
         private void gameTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
             _player.IsOnGround = false;
+            
+            // Restarts background music
             if (_outBackgroundSound.PlaybackState is PlaybackState.Stopped)
             {
                 _backgroundSound.CurrentTime = new TimeSpan(0L);
@@ -107,7 +142,9 @@ namespace inTheOverworld
                     {
                         gameTimer.Enabled = false;
                         _outBackgroundSound.Stop();
-                        // utils.SwitchScenes();
+                        InGame2 inGame2 = new InGame2();
+                        inGame2.Show();
+                        Hide();
                     }
                 }
             }
@@ -141,6 +178,5 @@ namespace inTheOverworld
             }
 
         }
-        
     }
 }

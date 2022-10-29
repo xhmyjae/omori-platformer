@@ -236,4 +236,28 @@
   <data name="cutscene0_15" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cutscene0_15.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="cutscene1_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cutscene1_1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cutscene1_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cutscene1_2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cutscene1_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cutscene1_3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cutscene1_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cutscene1_4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cutscene1_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cutscene1_5.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cutscene1_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cutscene1_6.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cutscene1_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cutscene1_7.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cutscene1_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cutscene1_8.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

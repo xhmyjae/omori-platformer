@@ -102,7 +102,13 @@ namespace inTheOverworld
 
             if (IsGoingRight && PlayerBox.Right < clientSize.Width) PlayerBox.Left += PlayerSpeed;
             
-            // if (PlayerBox.Bottom >= clientSize.Height) utils.SwitchScenes();
+            if (PlayerBox.Bottom >= clientSize.Height)
+            {
+                waveOut.Stop();
+                GameLose loseScreen = new GameLose();
+                loseScreen.Show();
+                form.Hide();
+            }
         }
 
         public void CollisionsHitBlock(Control control, [ Optional ] PictureBox specialBlock)
@@ -158,8 +164,7 @@ namespace inTheOverworld
                 waveOut.Stop();
                 GameLose loseScreen = new GameLose();
                 loseScreen.Show();
-                form.Hide();
-                // utils.SwitchScenes();
+                form.Close();
             }
         }
 
@@ -177,62 +182,6 @@ namespace inTheOverworld
             waveStream.CurrentTime = new TimeSpan(0L);
             waveOut.Play();
         }
-
-        // private void Lose(Form form, WaveOut waveOut)
-        // {
-        //     // show gameLose form
-        //     waveOut.Stop();
-        //     
-        //     form.Close();
-        //     GameLose loseScreen = new GameLose();
-        //     loseScreen.Show();
-        //     
-        // }
-
-        // public void End(Form form)
-        // {
-        //     // show gif, get back to menu
-        //     // AxWindowsMediaPlayer wmPlayer = new AxWindowsMediaPlayer();
-        //     // wmPlayer.CreateControl();
-        //     // wmPlayer.enableContextMenu = false;
-        //     // wmPlayer.BeginInit();
-        //     // wmPlayer.Enabled = true;
-        //     // wmPlayer.Dock = DockStyle.Fill;
-        //     // wmPlayer.Size = form.Size;
-        //     // wmPlayer.Location = new Point(0,0);
-        //     // form.Controls.Add(wmPlayer);
-        //     // wmPlayer.BringToFront();
-        //     // wmPlayer.URL = @"Resources/cutscene.mp4";
-        //     // wmPlayer.uiMode = "none";
-        //     // wmPlayer.Ctlcontrols.play();
-        //     
-        //     // if (wmPlayer. == "Stop")
-        //     // {
-        //     //     // put label for x time before leaving
-        //     //     form.Close();
-        //     // }
-        // }
-        
-        // public void SwitchScenes(Image[] images, Form formOld, Form formNew)
-        // {
-        //     Label label = new Label();
-        //     label.Size = new Size(formOld.Width, formOld.Height);
-        //     label.Location = new Point(0,0);
-        //     label.BringToFront();
-        //     formOld.Controls.Add(label);
-        //     int i = 0;
-        //     while (i < images.Length)
-        //         // for (int i = 1; i < images.Length; i++)
-        //     {
-        //         label.BackgroundImage = images[i];
-        //         if (IsSwiping)
-        //         {
-        //             i++;
-        //         }
-        //     }
-        //     formOld.Hide();
-        //     formNew.Show();
-        // }
 
     }
 }

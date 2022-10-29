@@ -68,6 +68,12 @@
         <Compile Include="GameLose.Designer.cs">
           <DependentUpon>GameLose.cs</DependentUpon>
         </Compile>
+        <Compile Include="Help.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Help.Designer.cs">
+          <DependentUpon>Help.cs</DependentUpon>
+        </Compile>
         <Compile Include="InGame.cs">
           <SubType>Form</SubType>
         </Compile>
@@ -167,9 +173,25 @@
       <Content Include="Resources\cutscene0_7.jpg" />
       <Content Include="Resources\cutscene0_8.jpg" />
       <Content Include="Resources\cutscene0_9.jpg" />
+      <Content Include="Resources\cutscene1-1.jpg" />
+      <Content Include="Resources\cutscene1-2.jpg" />
+      <Content Include="Resources\cutscene1-3.jpg" />
+      <Content Include="Resources\cutscene1-4.jpg" />
+      <Content Include="Resources\cutscene1-5.jpg" />
+      <Content Include="Resources\cutscene1-6.jpg" />
+      <Content Include="Resources\cutscene1-7.jpg" />
+      <Content Include="Resources\cutscene1-8.jpg" />
       <Content Include="Resources\cutscene1.gif" />
       <Content Include="Resources\cutscene1.mp4" />
       <Content Include="Resources\cutscene1.wav" />
+      <Content Include="Resources\cutscene1_1.jpg" />
+      <Content Include="Resources\cutscene1_2.jpg" />
+      <Content Include="Resources\cutscene1_3.jpg" />
+      <Content Include="Resources\cutscene1_4.jpg" />
+      <Content Include="Resources\cutscene1_5.jpg" />
+      <Content Include="Resources\cutscene1_6.jpg" />
+      <Content Include="Resources\cutscene1_7.jpg" />
+      <Content Include="Resources\cutscene1_8.jpg" />
       <Content Include="Resources\end.gif" />
       <Content Include="Resources\enemy.png" />
       <Content Include="Resources\HECTOR.png" />

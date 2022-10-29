@@ -97,6 +97,7 @@
             this.HelpButton.TabIndex = 4;
             this.HelpButton.Text = "Help";
             this.HelpButton.UseVisualStyleBackColor = false;
+            this.HelpButton.Click += new System.EventHandler(this.HelpButton_Click);
             // 
             // ExitButton
             // 

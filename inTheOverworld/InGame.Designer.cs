@@ -92,6 +92,7 @@ namespace inTheOverworld
             this.HitBlock26 = new System.Windows.Forms.PictureBox();
             this.gameTimer = new System.Timers.Timer();
             this.loseTimer = new System.Timers.Timer();
+            this.cutsceneTimer = new System.Timers.Timer();
             ((System.ComponentModel.ISupportInitialize) (this.HitBlock1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.HitBloc2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.HitBloc3)).BeginInit();
@@ -153,6 +154,7 @@ namespace inTheOverworld
             ((System.ComponentModel.ISupportInitialize) (this.HitBlock26)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.gameTimer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.loseTimer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.cutsceneTimer)).BeginInit();
             this.SuspendLayout();
             // 
             // HitBlock1
@@ -839,7 +841,6 @@ namespace inTheOverworld
             // 
             // gameTimer
             // 
-            this.gameTimer.Enabled = true;
             this.gameTimer.Interval = 20D;
             this.gameTimer.SynchronizingObject = this;
             this.gameTimer.Elapsed += new System.Timers.ElapsedEventHandler(this.gameTimer_Elapsed);
@@ -848,6 +849,13 @@ namespace inTheOverworld
             // 
             this.loseTimer.Interval = 1000D;
             this.loseTimer.SynchronizingObject = this;
+            // 
+            // cutsceneTimer
+            // 
+            this.cutsceneTimer.Enabled = true;
+            this.cutsceneTimer.Interval = 1500D;
+            this.cutsceneTimer.SynchronizingObject = this;
+            this.cutsceneTimer.Elapsed += new System.Timers.ElapsedEventHandler(this.cutsceneTimer_Elapsed);
             // 
             // InGame
             // 
@@ -921,7 +929,6 @@ namespace inTheOverworld
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "A day in the otherworld...";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InGame_FormClosing);
-            this.Load += new System.EventHandler(this.InGame_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.InGame_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.InGame_KeyUp);
             ((System.ComponentModel.ISupportInitialize) (this.HitBlock1)).EndInit();
@@ -985,8 +992,11 @@ namespace inTheOverworld
             ((System.ComponentModel.ISupportInitialize) (this.HitBlock26)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.gameTimer)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.loseTimer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.cutsceneTimer)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private System.Timers.Timer cutsceneTimer;
 
         private System.Timers.Timer loseTimer;
 
