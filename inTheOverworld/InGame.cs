@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Timers;
 using System.Windows.Forms;
 using NAudio.Wave;
@@ -84,7 +85,7 @@ namespace inTheOverworld
 
             // Interactions with blocs
             Enemy[] enemies = {_enemy1, _enemy2, _enemy3};
-            foreach (PictureBox control in this.Controls)
+            foreach (PictureBox control in this.Controls.OfType<PictureBox>())
             {
                 if (_player.PlayerBox.Bounds.IntersectsWith(control.Bounds))
                 {
@@ -94,7 +95,7 @@ namespace inTheOverworld
                             _player.CollisionsHitBlock(control, MovingBlock2);
                             break;
                         case "enemies" :
-                            _player.CollisionsEnemies(control, enemies, this);
+                            _player.CollisionsEnemies(control, enemies, this, _outBackgroundSound);
                             break;
                         case "hectorItem" :
                         case "jamItem" :
@@ -102,11 +103,17 @@ namespace inTheOverworld
                             _player.CollisionsItems(control, _itemSound, _outItemSound);
                             break;
                     }
+                    if (control.Name == "Door1" && _player.Score == 9)
+                    {
+                        gameTimer.Enabled = false;
+                        _outBackgroundSound.Stop();
+                        // utils.SwitchScenes();
+                    }
                 }
             }
             
             // Makes character move
-            _player.Move(ClientSize, this);
+            _player.Move(ClientSize, this, _outBackgroundSound);
 
             // Makes enemies move
             _enemy1.MoveHorizontal();

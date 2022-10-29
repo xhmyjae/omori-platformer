@@ -4,6 +4,8 @@ using System;
 using System.Linq;
 using NAudio.Wave;
 using System.Runtime.InteropServices;
+using System.Drawing.Imaging;
+using AxWMPLib;
 
 namespace inTheOverworld
 {
@@ -21,7 +23,7 @@ namespace inTheOverworld
         public int Force { get; set; }
         public int Score { get; set; }
         public PictureBox PlayerBox { get; set; }
-
+        
         public Player(bool isGoingLeft, bool isGoingRight, bool isJumping, bool isTouchingEnemies, bool isOnSpecial,
             bool isOnGround, bool hasJam, int playerSpeed, int playerJumpSpeed, int force, int score,
             PictureBox playerBox)
@@ -92,7 +94,7 @@ namespace inTheOverworld
             }
         }
 
-        public void Move(Size clientSize, Form form)
+        public void Move(Size clientSize, Form form, WaveOut waveOut)
         {
             if (!IsOnGround) PlayerBox.Top += PlayerSpeed;
 
@@ -100,7 +102,7 @@ namespace inTheOverworld
 
             if (IsGoingRight && PlayerBox.Right < clientSize.Width) PlayerBox.Left += PlayerSpeed;
             
-            if (PlayerBox.Bottom >= clientSize.Height) Lose(form);
+            // if (PlayerBox.Bottom >= clientSize.Height) utils.SwitchScenes();
         }
 
         public void CollisionsHitBlock(Control control, [ Optional ] PictureBox specialBlock)
@@ -138,7 +140,7 @@ namespace inTheOverworld
             }
         }
 
-        public void CollisionsEnemies(PictureBox control, Enemy[] enemies, Form form)
+        public void CollisionsEnemies(PictureBox control, Enemy[] enemies, Form form, WaveOut waveOut)
         {
             if (HasJam)
             {
@@ -153,7 +155,11 @@ namespace inTheOverworld
             }
             else
             {
-                Lose(form);
+                waveOut.Stop();
+                GameLose loseScreen = new GameLose();
+                loseScreen.Show();
+                form.Hide();
+                // utils.SwitchScenes();
             }
         }
 
@@ -171,43 +177,62 @@ namespace inTheOverworld
             waveStream.CurrentTime = new TimeSpan(0L);
             waveOut.Play();
         }
+
+        // private void Lose(Form form, WaveOut waveOut)
+        // {
+        //     // show gameLose form
+        //     waveOut.Stop();
+        //     
+        //     form.Close();
+        //     GameLose loseScreen = new GameLose();
+        //     loseScreen.Show();
+        //     
+        // }
+
+        // public void End(Form form)
+        // {
+        //     // show gif, get back to menu
+        //     // AxWindowsMediaPlayer wmPlayer = new AxWindowsMediaPlayer();
+        //     // wmPlayer.CreateControl();
+        //     // wmPlayer.enableContextMenu = false;
+        //     // wmPlayer.BeginInit();
+        //     // wmPlayer.Enabled = true;
+        //     // wmPlayer.Dock = DockStyle.Fill;
+        //     // wmPlayer.Size = form.Size;
+        //     // wmPlayer.Location = new Point(0,0);
+        //     // form.Controls.Add(wmPlayer);
+        //     // wmPlayer.BringToFront();
+        //     // wmPlayer.URL = @"Resources/cutscene.mp4";
+        //     // wmPlayer.uiMode = "none";
+        //     // wmPlayer.Ctlcontrols.play();
+        //     
+        //     // if (wmPlayer. == "Stop")
+        //     // {
+        //     //     // put label for x time before leaving
+        //     //     form.Close();
+        //     // }
+        // }
         
-        public void Win()
-        {
-            // gameTimer.Enabled = false;
-            // _outBackgroundSound.Stop();
-            // PictureBox cutscene = new PictureBox();
-            // cutscene.Size = new Size(ClientSize.Width, ClientSize.Height);
-            // cutscene.Location = new Point(0, 0);
-            // cutscene.ImageLocation = @"../../Resources/cutscene1.gif";
-            // cutscene.SizeMode = PictureBoxSizeMode.StretchImage;
-            // Controls.Add(cutscene);
-            // _cutscene1Sound.CurrentTime = new TimeSpan(0L);
-            // _outCutscene1Sound.Play();
-            // cutscene.BringToFront();
-        }
-        
-        public void Lose(Form form)
-        {
-            // show gameLose form
-            form.Close();
-            GameLose loseScreen = new GameLose();
-            loseScreen.Show();
-            
-            //loseTimer += 10;
-            // Label loseLabel = new Label();
-            // loseLabel.Text = "Maybe you should have stayed in White Space today ?";
-            // loseLabel.Size = new Size(ClientSize.Width, ClientSize.Height);
-            // loseLabel.BackgroundImage = Properties.Resources._parallax_black;
-            // gameTimer.Enabled = false;
-            // loseLabel.BringToFront();
-        }
-        
-        public void End(Form form)
-        {
-            // show gif, get back to menu
-            form.Close();
-        }
-        
+        // public void SwitchScenes(Image[] images, Form formOld, Form formNew)
+        // {
+        //     Label label = new Label();
+        //     label.Size = new Size(formOld.Width, formOld.Height);
+        //     label.Location = new Point(0,0);
+        //     label.BringToFront();
+        //     formOld.Controls.Add(label);
+        //     int i = 0;
+        //     while (i < images.Length)
+        //         // for (int i = 1; i < images.Length; i++)
+        //     {
+        //         label.BackgroundImage = images[i];
+        //         if (IsSwiping)
+        //         {
+        //             i++;
+        //         }
+        //     }
+        //     formOld.Hide();
+        //     formNew.Show();
+        // }
+
     }
 }

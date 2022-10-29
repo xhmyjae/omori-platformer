@@ -22,10 +22,8 @@ namespace inTheOverworld
         {
             _outBackgroundSound.Stop();
             menuTimer.Enabled = false;
-            GameLose lose = new GameLose();
-            lose.Show();
-            // InGame inGame = new InGame();
-            // inGame.Show();
+            InGame inGame = new InGame();
+            inGame.Show();
             Hide();
         }
 
@@ -36,6 +34,16 @@ namespace inTheOverworld
                 _backgroundSound.CurrentTime = new TimeSpan(0L);
                 _outBackgroundSound.Play();
             }
+        }
+        
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Close();
         }
     }
 }

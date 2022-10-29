@@ -36,9 +36,9 @@
             this.HelpButton = new System.Windows.Forms.Button();
             this.ExitButton = new System.Windows.Forms.Button();
             this.menuTimer = new System.Timers.Timer();
-            ((System.ComponentModel.ISupportInitialize)(this.Title1Menu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OmoriNPCMenu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.menuTimer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.Title1Menu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.OmoriNPCMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.menuTimer)).BeginInit();
             this.SuspendLayout();
             // 
             // Title1Menu
@@ -66,7 +66,7 @@
             // Title2Menu
             // 
             this.Title2Menu.BackColor = System.Drawing.Color.Transparent;
-            this.Title2Menu.Font = new System.Drawing.Font("Bradley Hand ITC", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Title2Menu.Font = new System.Drawing.Font("Bradley Hand ITC", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.Title2Menu.Location = new System.Drawing.Point(296, 227);
             this.Title2Menu.Name = "Title2Menu";
             this.Title2Menu.Size = new System.Drawing.Size(296, 38);
@@ -76,7 +76,7 @@
             // PlayButton
             // 
             this.PlayButton.BackColor = System.Drawing.Color.Black;
-            this.PlayButton.Font = new System.Drawing.Font("Bradley Hand ITC", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PlayButton.Font = new System.Drawing.Font("Bradley Hand ITC", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.PlayButton.ForeColor = System.Drawing.Color.White;
             this.PlayButton.Location = new System.Drawing.Point(66, 473);
             this.PlayButton.Name = "PlayButton";
@@ -89,7 +89,7 @@
             // HelpButton
             // 
             this.HelpButton.BackColor = System.Drawing.Color.Black;
-            this.HelpButton.Font = new System.Drawing.Font("Bradley Hand ITC", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HelpButton.Font = new System.Drawing.Font("Bradley Hand ITC", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.HelpButton.ForeColor = System.Drawing.Color.White;
             this.HelpButton.Location = new System.Drawing.Point(390, 473);
             this.HelpButton.Name = "HelpButton";
@@ -101,7 +101,7 @@
             // ExitButton
             // 
             this.ExitButton.BackColor = System.Drawing.Color.Black;
-            this.ExitButton.Font = new System.Drawing.Font("Bradley Hand ITC", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExitButton.Font = new System.Drawing.Font("Bradley Hand ITC", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.ExitButton.ForeColor = System.Drawing.Color.White;
             this.ExitButton.Location = new System.Drawing.Point(706, 473);
             this.ExitButton.Name = "ExitButton";
@@ -109,6 +109,7 @@
             this.ExitButton.TabIndex = 5;
             this.ExitButton.Text = "Exit";
             this.ExitButton.UseVisualStyleBackColor = false;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // menuTimer
             // 
@@ -121,7 +122,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::inTheOverworld.Properties.Resources._polaroidBG_FA_day;
-            this.ClientSize = new System.Drawing.Size(910, 581);
+            this.ClientSize = new System.Drawing.Size(910, 587);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.HelpButton);
             this.Controls.Add(this.PlayButton);
@@ -134,9 +135,10 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "A day in headspace";
-            ((System.ComponentModel.ISupportInitialize)(this.Title1Menu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OmoriNPCMenu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.menuTimer)).EndInit();
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            ((System.ComponentModel.ISupportInitialize) (this.Title1Menu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.OmoriNPCMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.menuTimer)).EndInit();
             this.ResumeLayout(false);
         }
 

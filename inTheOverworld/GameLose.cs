@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Drawing;
 using System.Timers;
 using System.Windows.Forms;
@@ -16,12 +17,21 @@ namespace inTheOverworld
         private WaveOut _outBackgroundSound;
         private WaveStream _itemSound;
         private WaveOut _outItemSound;
-        //private WaveStream _cutscene1Sound;
-        //private WaveOut _outCutscene1Sound;
+
+        // Cutscene related :
+        private PictureBox _cutscene;
         
         public GameLose()
         {
             InitializeComponent();
+            
+            _cutscene = new PictureBox();
+            _cutscene.Size = new Size(this.Width, this.Height);
+            _cutscene.Location = new Point(0,0);
+            _cutscene.Visible = false;
+            _cutscene.BackColor = Color.Black;
+            _cutscene.SizeMode = PictureBoxSizeMode.Zoom;
+            Controls.Add(_cutscene);
 
             _backgroundSound = new AudioFileReader(@"../../Resources/Drone-OST.wav");
             _outBackgroundSound = new WaveOut();
@@ -63,7 +73,7 @@ namespace inTheOverworld
             _player.Jump();
 
             // Interactions with blocs
-            foreach (PictureBox control in this.Controls)
+            foreach (PictureBox control in this.Controls.OfType<PictureBox>())
             {
                 if (_player.PlayerBox.Bounds.IntersectsWith(control.Bounds))
                 {
@@ -87,19 +97,59 @@ namespace inTheOverworld
                             HitBlock4.Location = new Point(128, 235);
                             HitBlock4.Tag = "hitBlock";
                             Controls.Add(HitBlock4);
-                            this.Controls.Remove(control);
+                            Controls.Remove(control);
                             _player.CollisionsItems(control, _itemSound, _outItemSound);
                             break;
                     }
                     if (control.Name == "Door1")
                     {
-                        _player.End(this);
+                        gameTimer.Enabled = false;
+                        _outBackgroundSound.Stop();
+                        // Image[] images = {Properties.Resources.cutscene0_1, Properties.Resources.cutscene0_2, Properties.Resources.cutscene0_3};
+                        // Form1 form1 = new Form1();
+                        
+                        _cutscene.Visible = true;
+                        _cutscene.BringToFront();
+                        cutsceneTimer.Enabled = true;
                     }
                 }
             }
             
             // Makes character move
-            _player.Move(ClientSize, this);
+            _player.Move(ClientSize, this, _outBackgroundSound);
+        }
+
+        int _count = 0;
+        Image[] _images =
+        {
+            Properties.Resources.cutscene0_1,
+            Properties.Resources.cutscene0_2,
+            Properties.Resources.cutscene0_3,
+            Properties.Resources.cutscene0_4,
+            Properties.Resources.cutscene0_5,
+            Properties.Resources.cutscene0_6,
+            Properties.Resources.cutscene0_7,
+            Properties.Resources.cutscene0_8,
+            Properties.Resources.cutscene0_9,
+            Properties.Resources.cutscene0_10,
+            Properties.Resources.cutscene0_11,
+            Properties.Resources.cutscene0_12,
+            Properties.Resources.cutscene0_13,
+            Properties.Resources.cutscene0_14,
+            Properties.Resources.cutscene0_15,
+        };
+        private void cutsceneTimer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            if (_count < 15)
+            {
+                _cutscene.Image = _images[_count];
+                _count++;
+            } 
+            else
+            {
+                cutsceneTimer.Enabled = false;
+                this.Close();
+            }
         }
     }
 }

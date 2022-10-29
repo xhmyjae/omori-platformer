@@ -42,6 +42,7 @@ namespace inTheOverworld
             this.Key1 = new System.Windows.Forms.PictureBox();
             this.Player1 = new System.Windows.Forms.PictureBox();
             this.gameTimer = new System.Timers.Timer();
+            this.cutsceneTimer = new System.Timers.Timer();
             ((System.ComponentModel.ISupportInitialize) (this.HitBlock1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.HitBlock2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.Door1)).BeginInit();
@@ -53,6 +54,7 @@ namespace inTheOverworld
             ((System.ComponentModel.ISupportInitialize) (this.Key1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.Player1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.gameTimer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.cutsceneTimer)).BeginInit();
             this.SuspendLayout();
             // 
             // HitBlock1
@@ -182,9 +184,16 @@ namespace inTheOverworld
             this.gameTimer.SynchronizingObject = this;
             this.gameTimer.Elapsed += new System.Timers.ElapsedEventHandler(this.gameTimer_Elapsed);
             // 
+            // cutsceneTimer
+            // 
+            this.cutsceneTimer.Interval = 1000D;
+            this.cutsceneTimer.SynchronizingObject = this;
+            this.cutsceneTimer.Elapsed += new System.Timers.ElapsedEventHandler(this.cutsceneTimer_Elapsed);
+            // 
             // GameLose
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = global::inTheOverworld.Properties.Resources._parallax_black;
             this.ClientSize = new System.Drawing.Size(910, 587);
             this.Controls.Add(this.Player1);
@@ -203,7 +212,7 @@ namespace inTheOverworld
             this.MinimumSize = new System.Drawing.Size(916, 616);
             this.Name = "GameLose";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "0 days left...";
+            this.Text = "Are you sure ?";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GameLose_FormClosing);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GameLose_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.GameLose_KeyUp);
@@ -218,8 +227,11 @@ namespace inTheOverworld
             ((System.ComponentModel.ISupportInitialize) (this.Key1)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.Player1)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.gameTimer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.cutsceneTimer)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private System.Timers.Timer cutsceneTimer;
 
         private System.Timers.Timer gameTimer;
 
