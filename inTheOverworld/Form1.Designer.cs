@@ -123,14 +123,14 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::inTheOverworld.Properties.Resources._polaroidBG_FA_day;
-            this.ClientSize = new System.Drawing.Size(910, 587);
+            this.ClientSize = new System.Drawing.Size(916, 616);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.HelpButton);
             this.Controls.Add(this.PlayButton);
             this.Controls.Add(this.Title2Menu);
             this.Controls.Add(this.OmoriNPCMenu);
             this.Controls.Add(this.Title1Menu);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximumSize = new System.Drawing.Size(916, 616);
             this.MinimumSize = new System.Drawing.Size(916, 616);
             this.Name = "Form1";

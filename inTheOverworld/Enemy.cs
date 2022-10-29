@@ -75,6 +75,7 @@ namespace inTheOverworld
             EnemyBox.Image = Properties.Resources.bread;
             EnemyBox.Height = 40;
             EnemyBox.Width = 40;
+            EnemyBox.Tag = "backBlock";
         }
     }
 }

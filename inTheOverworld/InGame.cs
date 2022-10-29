@@ -58,14 +58,6 @@ namespace inTheOverworld
             _enemy1 = new Enemy(2, Bunny1.Top, HitBlock16.Right, Bunny1.Bottom, HitBlock14.Left, true, Bunny1);
             _enemy2 = new Enemy(2, Bunny2.Top, HitBlock7.Right, Bunny2.Bottom, HitBlock5.Left, true, Bunny2);
             _enemy3 = new Enemy(3, 0, Crawler1.Right, Crawler1.Height, Crawler1.Left, true, Crawler1);
-        } 
-            
-        private void InGame_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            gameTimer.Enabled = false;
-            // _outBackgroundSound.Stop();
-            // Form1 menu = new Form1();
-            // menu.Show();
         }
 
         private void InGame_KeyDown(object sender, KeyEventArgs e)
@@ -130,7 +122,7 @@ namespace inTheOverworld
                             _player.CollisionsHitBlock(control, MovingBlock2);
                             break;
                         case "enemies" :
-                            _player.CollisionsEnemies(control, enemies, this, _outBackgroundSound);
+                            _player.CollisionsEnemies(control, enemies, this, _outBackgroundSound, gameTimer);
                             break;
                         case "hectorItem" :
                         case "jamItem" :
@@ -142,15 +134,15 @@ namespace inTheOverworld
                     {
                         gameTimer.Enabled = false;
                         _outBackgroundSound.Stop();
-                        InGame2 inGame2 = new InGame2();
-                        inGame2.Show();
-                        Hide();
+                        InGame4 inGame4 = new InGame4();
+                        inGame4.Show();
+                        Close();
                     }
                 }
             }
             
             // Makes character move
-            _player.Move(ClientSize, this, _outBackgroundSound);
+            _player.Move(ClientSize, this, _outBackgroundSound, gameTimer);
 
             // Makes enemies move
             _enemy1.MoveHorizontal();
@@ -177,6 +169,14 @@ namespace inTheOverworld
                 }
             }
 
+        }
+
+        private void exit_Click(object sender, EventArgs e)
+        {
+            gameTimer.Enabled = false;
+            _outBackgroundSound.Stop();
+            Form1 menu = new Form1();
+            menu.Show();
         }
     }
 }

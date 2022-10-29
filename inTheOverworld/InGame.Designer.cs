@@ -93,6 +93,7 @@ namespace inTheOverworld
             this.gameTimer = new System.Timers.Timer();
             this.loseTimer = new System.Timers.Timer();
             this.cutsceneTimer = new System.Timers.Timer();
+            this.exit = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize) (this.HitBlock1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.HitBloc2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.HitBloc3)).BeginInit();
@@ -155,6 +156,7 @@ namespace inTheOverworld
             ((System.ComponentModel.ISupportInitialize) (this.gameTimer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.loseTimer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.cutsceneTimer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.exit)).BeginInit();
             this.SuspendLayout();
             // 
             // HitBlock1
@@ -857,11 +859,24 @@ namespace inTheOverworld
             this.cutsceneTimer.SynchronizingObject = this;
             this.cutsceneTimer.Elapsed += new System.Timers.ElapsedEventHandler(this.cutsceneTimer_Elapsed);
             // 
+            // exit
+            // 
+            this.exit.BackColor = System.Drawing.Color.Transparent;
+            this.exit.Image = global::inTheOverworld.Properties.Resources.exit_icon;
+            this.exit.Location = new System.Drawing.Point(868, 12);
+            this.exit.Name = "exit";
+            this.exit.Size = new System.Drawing.Size(30, 30);
+            this.exit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.exit.TabIndex = 69;
+            this.exit.TabStop = false;
+            this.exit.Click += new System.EventHandler(this.exit_Click);
+            // 
             // InGame
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::inTheOverworld.Properties.Resources.Space_parallax;
-            this.ClientSize = new System.Drawing.Size(910, 587);
+            this.ClientSize = new System.Drawing.Size(916, 616);
+            this.Controls.Add(this.exit);
             this.Controls.Add(this.HitBlock26);
             this.Controls.Add(this.HitBlock25);
             this.Controls.Add(this.HitBlock24);
@@ -922,13 +937,12 @@ namespace inTheOverworld
             this.Controls.Add(this.HitBloc2);
             this.Controls.Add(this.HitBlock1);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximumSize = new System.Drawing.Size(916, 616);
             this.MinimumSize = new System.Drawing.Size(916, 616);
             this.Name = "InGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "A day in the otherworld...";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InGame_FormClosing);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.InGame_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.InGame_KeyUp);
             ((System.ComponentModel.ISupportInitialize) (this.HitBlock1)).EndInit();
@@ -993,14 +1007,17 @@ namespace inTheOverworld
             ((System.ComponentModel.ISupportInitialize) (this.gameTimer)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.loseTimer)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.cutsceneTimer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.exit)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.PictureBox exit;
 
         private System.Timers.Timer cutsceneTimer;
 
         private System.Timers.Timer loseTimer;
 
-        private System.Timers.Timer gameTimer;
+        public System.Timers.Timer gameTimer;
 
         private System.Windows.Forms.PictureBox HitBlock26;
 

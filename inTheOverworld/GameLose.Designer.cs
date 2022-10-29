@@ -195,7 +195,7 @@ namespace inTheOverworld
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = global::inTheOverworld.Properties.Resources._parallax_black;
-            this.ClientSize = new System.Drawing.Size(910, 587);
+            this.ClientSize = new System.Drawing.Size(916, 616);
             this.Controls.Add(this.Player1);
             this.Controls.Add(this.Key1);
             this.Controls.Add(this.Computer1);
@@ -207,13 +207,12 @@ namespace inTheOverworld
             this.Controls.Add(this.HitBlock2);
             this.Controls.Add(this.HitBlock1);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximumSize = new System.Drawing.Size(916, 616);
             this.MinimumSize = new System.Drawing.Size(916, 616);
             this.Name = "GameLose";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Are you sure ?";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GameLose_FormClosing);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GameLose_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.GameLose_KeyUp);
             ((System.ComponentModel.ISupportInitialize) (this.HitBlock1)).EndInit();

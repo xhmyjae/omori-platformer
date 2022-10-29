@@ -43,14 +43,6 @@ namespace inTheOverworld
             _player = new Player(false, false, false, false, false, false, false, 5, 17, 0, 0, Player1);
         }
 
-        private void GameLose_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            _outBackgroundSound.Stop();
-            gameTimer.Enabled = false;
-            Form1 menu = new Form1();
-            menu.Show();
-        }
-
         private void GameLose_KeyDown(object sender, KeyEventArgs e)
         {
             _player.DownKeys(e);
@@ -105,9 +97,7 @@ namespace inTheOverworld
                     {
                         gameTimer.Enabled = false;
                         _outBackgroundSound.Stop();
-                        // Image[] images = {Properties.Resources.cutscene0_1, Properties.Resources.cutscene0_2, Properties.Resources.cutscene0_3};
-                        // Form1 form1 = new Form1();
-                        
+
                         _cutscene.Visible = true;
                         _cutscene.BringToFront();
                         cutsceneTimer.Enabled = true;
@@ -116,7 +106,7 @@ namespace inTheOverworld
             }
             
             // Makes character move
-            _player.Move(ClientSize, this, _outBackgroundSound);
+            _player.Move(ClientSize, this, _outBackgroundSound, gameTimer);
         }
 
         int _count = 0;
@@ -148,7 +138,11 @@ namespace inTheOverworld
             else
             {
                 cutsceneTimer.Enabled = false;
-                this.Close();
+                _outBackgroundSound.Stop();
+                gameTimer.Enabled = false;
+                Form1 menu = new Form1();
+                menu.Show();
+                Close();
             }
         }
     }

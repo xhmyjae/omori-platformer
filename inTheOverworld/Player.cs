@@ -94,7 +94,7 @@ namespace inTheOverworld
             }
         }
 
-        public void Move(Size clientSize, Form form, WaveOut waveOut)
+        public void Move(Size clientSize, Form form, WaveOut waveOut, System.Timers.Timer timer)
         {
             if (!IsOnGround) PlayerBox.Top += PlayerSpeed;
 
@@ -105,9 +105,10 @@ namespace inTheOverworld
             if (PlayerBox.Bottom >= clientSize.Height)
             {
                 waveOut.Stop();
+                timer.Enabled = false;
+                form.Close();
                 GameLose loseScreen = new GameLose();
                 loseScreen.Show();
-                form.Hide();
             }
         }
 
@@ -146,7 +147,7 @@ namespace inTheOverworld
             }
         }
 
-        public void CollisionsEnemies(PictureBox control, Enemy[] enemies, Form form, WaveOut waveOut)
+        public void CollisionsEnemies(PictureBox control, Enemy[] enemies, Form form, WaveOut waveOut, System.Timers.Timer timer)
         {
             if (HasJam)
             {
@@ -162,9 +163,10 @@ namespace inTheOverworld
             else
             {
                 waveOut.Stop();
+                timer.Enabled = false;
+                form.Close();
                 GameLose loseScreen = new GameLose();
                 loseScreen.Show();
-                form.Close();
             }
         }
 
