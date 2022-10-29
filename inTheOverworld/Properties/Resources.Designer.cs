@@ -82,6 +82,16 @@ namespace inTheOverworld.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap A_KEY {
+            get {
+                object obj = ResourceManager.GetObject("A_KEY", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap blocDeadTree {
             get {
                 object obj = ResourceManager.GetObject("blocDeadTree", resourceCulture);
@@ -285,6 +295,16 @@ namespace inTheOverworld.Properties {
         internal static System.Drawing.Bitmap bunnyRight {
             get {
                 object obj = ResourceManager.GetObject("bunnyRight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap C_Key {
+            get {
+                object obj = ResourceManager.GetObject("C_Key", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -802,6 +822,26 @@ namespace inTheOverworld.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap D_Key {
+            get {
+                object obj = ResourceManager.GetObject("D_Key", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap E_Key {
+            get {
+                object obj = ResourceManager.GetObject("E_Key", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap end {
             get {
                 object obj = ResourceManager.GetObject("end", resourceCulture);
@@ -832,6 +872,36 @@ namespace inTheOverworld.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap F_Key {
+            get {
+                object obj = ResourceManager.GetObject("F_Key", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap G_Key {
+            get {
+                object obj = ResourceManager.GetObject("G_Key", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap H_Key {
+            get {
+                object obj = ResourceManager.GetObject("H_Key", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap HECTOR {
             get {
                 object obj = ResourceManager.GetObject("HECTOR", resourceCulture);
@@ -855,6 +925,16 @@ namespace inTheOverworld.Properties {
         internal static System.Drawing.Bitmap hectorSmaller {
             get {
                 object obj = ResourceManager.GetObject("hectorSmaller", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap I_Key {
+            get {
+                object obj = ResourceManager.GetObject("I_Key", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -905,6 +985,16 @@ namespace inTheOverworld.Properties {
         internal static System.Drawing.Bitmap key2 {
             get {
                 object obj = ResourceManager.GetObject("key2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap L_Key {
+            get {
+                object obj = ResourceManager.GetObject("L_Key", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1002,9 +1092,59 @@ namespace inTheOverworld.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap P_Key {
+            get {
+                object obj = ResourceManager.GetObject("P_Key", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap R_Key {
+            get {
+                object obj = ResourceManager.GetObject("R_Key", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap S_Key {
+            get {
+                object obj = ResourceManager.GetObject("S_Key", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Space_parallax {
             get {
                 object obj = ResourceManager.GetObject("Space_parallax", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sunset_sky {
+            get {
+                object obj = ResourceManager.GetObject("sunset_sky", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap T_Key {
+            get {
+                object obj = ResourceManager.GetObject("T_Key", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1025,6 +1165,16 @@ namespace inTheOverworld.Properties {
         internal static System.Drawing.Bitmap tissues_reverse {
             get {
                 object obj = ResourceManager.GetObject("tissues_reverse", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap U_Key {
+            get {
+                object obj = ResourceManager.GetObject("U_Key", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -95,6 +95,9 @@
         <EmbeddedResource Include="GameLose.resx">
           <DependentUpon>GameLose.cs</DependentUpon>
         </EmbeddedResource>
+        <EmbeddedResource Include="Help.resx">
+          <DependentUpon>Help.cs</DependentUpon>
+        </EmbeddedResource>
         <EmbeddedResource Include="InGame.resx">
           <DependentUpon>InGame.cs</DependentUpon>
         </EmbeddedResource>
@@ -125,6 +128,7 @@
         <None Include="App.config" />
     </ItemGroup>
     <ItemGroup>
+      <Content Include="Resources\A_KEY.png" />
       <Content Include="Resources\blocDeadTree.png" />
       <Content Include="Resources\blocDoor.png" />
       <Content Include="Resources\blocDoorReverse.png" />
@@ -221,12 +225,19 @@
       <Content Include="Resources\cutscene5_7.jpg" />
       <Content Include="Resources\cutscene5_8.jpg" />
       <Content Include="Resources\cutscene5_9.jpg" />
+      <Content Include="Resources\C_Key.png" />
+      <Content Include="Resources\D_Key.png" />
       <Content Include="Resources\end.gif" />
       <Content Include="Resources\enemy.png" />
       <Content Include="Resources\exit_icon.png" />
+      <Content Include="Resources\E_Key.png" />
+      <Content Include="Resources\F_Key.png" />
+      <Content Include="Resources\G_Key.png" />
       <Content Include="Resources\HECTOR.png" />
       <Content Include="Resources\hectorRotation.gif" />
       <Content Include="Resources\hectorSmaller.png" />
+      <Content Include="Resources\H_Key.png" />
+      <Content Include="Resources\I_Key.png" />
       <Content Include="Resources\jam.png" />
       <Content Include="Resources\jamRotation.gif" />
       <Content Include="Resources\itemSound.wav" />
@@ -236,6 +247,7 @@
       <Content Include="Resources\key_reverse.png" />
       <Content Include="Resources\lamp_big.png" />
       <Content Include="Resources\lamp_reverse.png" />
+      <Content Include="Resources\L_Key.png" />
       <Content Include="Resources\mewo.png" />
       <Content Include="Resources\mewo_reverse.png" />
       <Content Include="Resources\omoriGoingLeft.gif" />
@@ -243,10 +255,16 @@
       <Content Include="Resources\omoriLeft3.png" />
       <Content Include="Resources\omoriRight3.png" />
       <Content Include="Resources\OMORI_logo.png" />
+      <Content Include="Resources\P_Key.png" />
+      <Content Include="Resources\R_Key.png" />
       <Content Include="Resources\Space_parallax.png" />
+      <Content Include="Resources\sunset_sky.png" />
+      <Content Include="Resources\S_Key.png" />
       <Content Include="Resources\tissues.png" />
       <Content Include="Resources\tissues_reverse.png" />
       <Content Include="Resources\toastSound.wav" />
+      <Content Include="Resources\T_Key.png" />
+      <Content Include="Resources\U_Key.png" />
       <Content Include="Resources\Whitespace-OST.wav" />
       <Content Include="Resources\_parallax_black.png" />
       <Content Include="Resources\_polaroidBG_FA_day.png" />

@@ -46,3 +46,4 @@ C:\Users\jaech\OneDrive\Documents\cours\csharp\omori-platformer\inTheOverworld\b
 C:\Users\jaech\OneDrive\Documents\cours\csharp\omori-platformer\inTheOverworld\obj\Debug\inTheOverworld.GameLose.resources
 C:\Users\jaech\OneDrive\Documents\cours\csharp\omori-platformer\inTheOverworld\obj\Debug\inTheOverworld.csproj.CopyComplete
 C:\Users\jaech\OneDrive\Documents\cours\csharp\omori-platformer\inTheOverworld\obj\Debug\inTheOverworld.InGame4.resources
+C:\Users\jaech\OneDrive\Documents\cours\csharp\omori-platformer\inTheOverworld\obj\Debug\inTheOverworld.Help.resources
